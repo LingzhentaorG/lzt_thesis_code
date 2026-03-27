@@ -1,0 +1,23 @@
+# Python cache
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Generated figures and media
+GNSS_draw/outputs/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.mp4
+
+# Downloaded netCDF data and partial downloads
+Data_download/**
+!Data_download/
+!Data_download/download_nc_data.py
+*.nc
+*.part
+
+# Local environment files
+.venv/
+venv/

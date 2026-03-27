@@ -1,0 +1,41 @@
+[data]
+root = "../Data_download"
+year = "2024"
+category = "ROTI"
+mode = "batch"
+doys = ["130"]
+
+[output]
+root = "./outputs"
+image_format = "png"
+dpi = 300
+
+[plot]
+region = "americas"
+lon_mode = "auto"
+figure_size = [12.0, 6.75]
+font_family = "Times New Roman"
+show_magnetic_equator = true
+magnetic_equator_color = "red"
+magnetic_equator_linewidth = 1.5
+
+[style.vtec]
+cmap = "viridis"
+vmin = 0
+vmax = 80
+
+[style.dtec]
+cmap = "RdBu_r"
+vmin = -0.4
+vmax = 0.4
+
+[style.roti]
+cmap = "viridis"
+vmin = 0
+vmax = 1
+
+[region.custom]
+lon_min = -170
+lon_max = -20
+lat_min = -80
+lat_max = 80
