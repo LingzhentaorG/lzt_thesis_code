@@ -1,5 +1,14 @@
 #!/usr/bin/env python
-"""Plot GOLD NI1 135.6 nm geolocated maps from CHA/CHB tar archives."""
+"""GOLD NI1 135.6 nm 散点制图脚本。
+
+该脚本直接读取 `.tar` 归档中的 GOLD NI1 NetCDF 文件，自动完成：
+
+1. 识别 `CHA` 与 `CHB` 两个半球观测通道
+2. 按时间配对两类观测
+3. 提取最接近 135.6 nm 的辐亮度
+4. 合并成一张地理定位散点图
+5. 输出为批量 PNG 文件
+"""
 
 from __future__ import annotations
 
@@ -34,6 +43,8 @@ FILE_PATTERN = re.compile(
 
 @dataclass(frozen=True)
 class ArchiveEntry:
+    """表示归档中的一个可用 NetCDF 成员。"""
+
     tar_path: Path
     member_name: str
     hemisphere: str
@@ -42,16 +53,20 @@ class ArchiveEntry:
 
 @dataclass(frozen=True)
 class PairMatch:
+    """表示一个成功配对的 `CHA/CHB` 观测对。"""
+
     cha: ArchiveEntry
     chb: ArchiveEntry
     delta: timedelta
 
     @property
     def midpoint(self) -> datetime:
+        """返回两路观测时间的中点，作为图题和输出命名的主时间。"""
         return self.cha.obs_time + (self.chb.obs_time - self.cha.obs_time) / 2
 
 
 def parse_args() -> argparse.Namespace:
+    """解析命令行参数。"""
     parser = argparse.ArgumentParser(
         description=(
             "Read GOLD NI1 CHA/CHB NetCDF files directly from .tar archives and "
@@ -145,6 +160,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def iter_tar_paths(raw_inputs: Iterable[str]) -> list[Path]:
+    """把输入参数统一展开为去重后的 `.tar` 路径列表。"""
     tar_paths: list[Path] = []
     for raw in raw_inputs:
         path = Path(raw).expanduser().resolve()
@@ -162,6 +178,7 @@ def iter_tar_paths(raw_inputs: Iterable[str]) -> list[Path]:
 
 
 def parse_entry(tar_path: Path, member_name: str) -> ArchiveEntry | None:
+    """从文件名中解析半球标识与观测时间。"""
     match = FILE_PATTERN.search(member_name)
     if not match:
         return None
@@ -176,6 +193,7 @@ def parse_entry(tar_path: Path, member_name: str) -> ArchiveEntry | None:
 
 
 def discover_entries(tar_path: Path) -> list[ArchiveEntry]:
+    """扫描一个归档，提取其中全部可识别的 GOLD NI1 成员。"""
     entries: list[ArchiveEntry] = []
     with tarfile.open(tar_path) as archive:
         for member in archive.getmembers():
@@ -188,6 +206,7 @@ def discover_entries(tar_path: Path) -> list[ArchiveEntry]:
 
 
 def match_pairs(entries: list[ArchiveEntry], max_delta_minutes: float) -> tuple[list[PairMatch], list[ArchiveEntry]]:
+    """按时间差贪心匹配 `CHA` 与 `CHB` 观测。"""
     cha_entries = [entry for entry in entries if entry.hemisphere == "CHA"]
     chb_entries = [entry for entry in entries if entry.hemisphere == "CHB"]
     max_delta = timedelta(minutes=max_delta_minutes)
@@ -201,6 +220,7 @@ def match_pairs(entries: list[ArchiveEntry], max_delta_minutes: float) -> tuple[
             if delta <= max_delta:
                 candidates.append((delta, cha_index, chb_index))
 
+    # 先按时间差最小排序，再做一次不重复使用的贪心配对。
     candidates.sort(
         key=lambda item: (
             item[0],
@@ -241,6 +261,7 @@ def match_pairs(entries: list[ArchiveEntry], max_delta_minutes: float) -> tuple[
 
 
 def read_dataset_bytes(archive: tarfile.TarFile, member_name: str) -> bytes:
+    """从 tar 归档中读取指定成员的原始字节。"""
     extracted = archive.extractfile(member_name)
     if extracted is None:
         raise FileNotFoundError(f"Failed to read {member_name} from archive.")
@@ -253,6 +274,7 @@ def read_geo_points(
     target_nm: float,
     quality_mode: str,
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """读取单个观测条带的经纬度点云与目标波长辐亮度。"""
     dataset_bytes = read_dataset_bytes(archive, member_name)
     with Dataset("inmemory.nc", memory=dataset_bytes) as dataset:
         latitude = np.ma.filled(dataset.variables["REFERENCE_POINT_LAT"][:], np.nan).astype(np.float64)
@@ -261,9 +283,11 @@ def read_geo_points(
         radiance = np.ma.filled(dataset.variables["RADIANCE"][:], np.nan).astype(np.float64)
         quality_flag = np.ma.filled(dataset.variables["QUALITY_FLAG"][:], 0).astype(np.uint32)
 
+    # 每个像元的波长轴上选择最接近目标波长的位置。
     nearest_index = np.abs(wavelength - target_nm).argmin(axis=2)
     radiance_1356 = np.take_along_axis(radiance, nearest_index[..., None], axis=2)[..., 0]
 
+    # 仅保留坐标和辐亮度都有效的像元；必要时进一步按质量标志筛选。
     valid = np.isfinite(latitude) & np.isfinite(longitude) & np.isfinite(radiance_1356)
     valid &= (latitude >= -90.0) & (latitude <= 90.0)
     valid &= (longitude >= -180.0) & (longitude <= 180.0)
@@ -274,6 +298,7 @@ def read_geo_points(
 
 
 def format_pair_title(pair: PairMatch) -> str:
+    """生成图题文字。"""
     midpoint = pair.midpoint.strftime("%Y-%m-%d %H:%MUT")
     if pair.cha.obs_time == pair.chb.obs_time:
         return midpoint
@@ -283,6 +308,7 @@ def format_pair_title(pair: PairMatch) -> str:
 
 
 def format_output_name(pair: PairMatch, target_nm: float) -> str:
+    """生成输出 PNG 文件名。"""
     midpoint = pair.midpoint.strftime("%Y%m%dT%H%MZ")
     cha_label = pair.cha.obs_time.strftime("%H%M")
     chb_label = pair.chb.obs_time.strftime("%H%M")
@@ -291,6 +317,7 @@ def format_output_name(pair: PairMatch, target_nm: float) -> str:
 
 
 def add_map_background(ax: GeoAxes) -> None:
+    """为地图添加海洋、陆地、边界和经纬网背景。"""
     ax.set_facecolor("#b7d6e6")
     ax.add_feature(
         cfeature.OCEAN.with_scale("110m"),
@@ -403,9 +430,11 @@ def plot_pair(
     dpi: int,
     apex: Apex,
 ) -> None:
+    """把一个 `CHA/CHB` 配对绘制成单张散点图。"""
     cha_lon, cha_lat, cha_rad = read_geo_points(archive, pair.cha.member_name, target_nm, quality_mode)
     chb_lon, chb_lat, chb_rad = read_geo_points(archive, pair.chb.member_name, target_nm, quality_mode)
 
+    # 两个半球的有效点直接拼接成一套散点坐标。
     longitude = np.concatenate([cha_lon, chb_lon])
     latitude = np.concatenate([cha_lat, chb_lat])
     radiance = np.concatenate([cha_rad, chb_rad])
@@ -466,6 +495,7 @@ def process_archive(
     limit: int | None,
     verbose: bool,
 ) -> tuple[int, int]:
+    """处理单个归档文件，并返回写出的图像数与未配对文件数。"""
     entries = discover_entries(tar_path)
     if not entries:
         print(f"[WARN] {tar_path.name}: no GOLD NI1 CHA/CHB files found.")
@@ -518,6 +548,7 @@ def process_archive(
 
 
 def main() -> int:
+    """脚本主入口。"""
     args = parse_args()
     if args.vmax <= args.vmin:
         raise ValueError("--vmax must be greater than --vmin.")

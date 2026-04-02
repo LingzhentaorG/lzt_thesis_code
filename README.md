@@ -1,305 +1,210 @@
-# 电离层与空间天气数据分析绘图工具集
+# 电离层与空间天气论文绘图项目
 
-本项目是一个用于电离层和空间天气数据分析的 Python 工具集，包含三个独立的子项目，分别用于处理 GNSS 电离层数据、GOLD 卫星数据和 OMNI 太阳风参数数据。
+本仓库收集了论文写作中使用的三类数据处理与制图脚本：
 
-## 项目结构
+- `GNSSdraw`：下载并绘制 GNSS 电离层网格产品，支持 `VTEC`、`dTEC`、`ROTI`
+- `GOLDdraw`：读取 NASA GOLD NI1 归档文件，生成 135.6 nm 辐亮度地图
+- `OMNIdarw`：从 NASA CDAWeb HAPI 接口下载 OMNI 参数，输出 CSV 与时间序列图
+- `run_logs`：面向本机批处理的 GNSS 并行重绘/补绘脚本与运行日志
 
-```
+项目整体偏向“论文生产工具箱”而非通用 Python 包：源码可复用，但部分脚本仍保留了针对当前数据目录和工作站环境的硬编码设置。
+
+## 仓库结构
+
+```text
 lzt_thesis_code/
-├── GNSSdraw/                 # GNSS 电离层数据绘图模块
-│   ├── Data_download/        # 数据下载模块
-│   │   └── download_nc_data.py
-│   └── GNSS_draw/            # 核心绘图模块
-│       ├── main.py           # 主入口程序
-│       ├── config.py         # 配置解析模块
-│       ├── plotter.py        # 绑图模块
-│       ├── reader.py         # 数据读取模块
-│       ├── preprocess.py     # 数据预处理模块
-│       └── batch_export.py   # 批量导出模块
-├── GOLDdraw/                 # GOLD 卫星数据处理模块
-│   ├── gold_ni1_map_1356.py          # 主绘图脚本（散点图模式）
-│   ├── gold_ni1_plot_stitched_v2.py  # 增强脚本（网格模式）
-│   └── gold_ni1_plot_four_panel.py   # 四面板图脚本
-├── OMNIdarw/                 # OMNI 太阳风参数绘图模块
+├── GNSSdraw/
+│   ├── Data_download/
+│   │   ├── download_nc_data.py
+│   │   ├── README.md
+│   │   ├── VTEC_data/
+│   │   ├── dTEC_data/
+│   │   └── ROTI_data/
+│   └── GNSS_draw/
+│       ├── __init__.py
+│       ├── main.py
+│       ├── config.py
+│       ├── reader.py
+│       ├── preprocess.py
+│       ├── plotter.py
+│       ├── batch_export.py
+│       ├── README.md
+│       ├── config.example.toml
+│       ├── config.toml
+│       ├── config_vtec.toml
+│       ├── config_dtec.toml
+│       └── config_roti.toml
+├── GOLDdraw/
+│   ├── gold_ni1_map_1356.py
+│   ├── gold_ni1_plot_stitched_v2.py
+│   ├── gold_ni1_plot_four_panel.py
+│   └── README.md
+├── OMNIdarw/
 │   ├── scripts/
-│   │   └── plot_omni_timeseries.py   # 时间序列绘图脚本
-│   └── outputs/              # 输出目录
-│       ├── data/             # CSV 数据文件
-│       └── figures/          # 图像文件
-└── README.md                 # 本文件
+│   │   └── plot_omni_timeseries.py
+│   ├── outputs/
+│   │   ├── data/
+│   │   └── figures/
+│   └── README.md
+├── run_logs/
+│   ├── gnss_full_redraw.py
+│   ├── gnss_parallel_fill.py
+│   ├── *.out.log / *.err.log
+│   └── README.md
+└── README.md
 ```
 
----
+## 模块概览
 
-## 一、GNSSdraw - GNSS 电离层数据绘图模块
+### 1. GNSSdraw
 
-### 1.1 功能简介
+`GNSSdraw` 分成两个部分：
 
-GNSSdraw 是一个用于读取和处理 GNSS 电离层 netCDF 数据的 Python 工具集，支持：
+- `Data_download/download_nc_data.py`
+  从名古屋大学 ISEE 数据站批量抓取 `VTEC`、`dTEC`、`ROTI` 的 `.nc` 文件
+- `GNSS_draw/`
+  读取下载后的 netCDF 网格文件，按配置输出单张或批量地图
 
-- **数据类型**：VTEC（垂直总电子含量）、dTEC（相对总电子含量）、ROTI（旋转指数）
-- **绘图模式**：单文件单时刻绘图、批量遍历全年文件并导出
-- **区域裁剪**：全球、亚太地区、南美洲、美洲、自定义区域
-- **磁赤道叠加**：支持在图上绘制磁赤道线
+GNSS 绘图链路如下：
 
-### 1.2 数据来源
+```text
+远程目录索引 -> 本地 nc 数据目录 -> 配置解析 -> 读取时间切片 -> 经度/区域预处理 -> Cartopy 出图
+```
 
-数据来自名古屋大学太阳地球环境研究所（ISEE）：
+当前实现支持：
 
-- VTEC: `https://stdb2.isee.nagoya-u.ac.jp/GPS/shinbori/AGRID2/nc/`
-- dTEC: `https://stdb2.isee.nagoya-u.ac.jp/GPS/shinbori/GRID2/nc/`
-- ROTI: `https://stdb2.isee.nagoya-u.ac.jp/GPS/shinbori/RGRID2/nc/`
+- 自动识别时间、纬度、经度和主要数据变量
+- `single` 与 `batch` 两种导出模式
+- 预设区域与自定义区域裁剪
+- `0~360` / `-180~180` 经度体系转换
+- 可选磁赤道叠加
+- 多年份批量扫描
 
-### 1.3 环境要求
+详细说明见：
 
-- Python 3.10+
-- 依赖库：`xarray`, `netCDF4`, `numpy`, `pandas`, `matplotlib`, `cartopy`
+- [GNSSdraw/Data_download/README.md](GNSSdraw/Data_download/README.md)
+- [GNSSdraw/GNSS_draw/README.md](GNSSdraw/GNSS_draw/README.md)
+
+### 2. GOLDdraw
+
+`GOLDdraw` 直接读取 `.tar` 归档中的 GOLD NI1 NetCDF 文件，不要求先手工解压。核心流程是：
+
+1. 扫描归档内文件名
+2. 自动匹配同日且时间接近的 `CHA` / `CHB` 观测对
+3. 读取 `REFERENCE_POINT_LAT/LON`、`WAVELENGTH`、`RADIANCE`、`QUALITY_FLAG`
+4. 抽取 135.6 nm 辐亮度
+5. 按不同脚本输出散点图、拼接图或四面板图
+
+三个脚本的定位分别是：
+
+- `gold_ni1_map_1356.py`：散点模式，适合快速批量出图
+- `gold_ni1_plot_stitched_v2.py`：保留原始扫描条带或重采样到规则网格，适合正式作图
+- `gold_ni1_plot_four_panel.py`：固定时间列表的四面板论文图
+
+详细说明见 [GOLDdraw/README.md](GOLDdraw/README.md)。
+
+### 3. OMNIdarw
+
+目录名 `OMNIdarw` 沿用了仓库原始拼写。该模块通过 CDAWeb HAPI 接口抓取：
+
+- `OMNI_HRO2_1MIN` 中的 `BZ_GSM`
+- `OMNI2_H0_MRG1HR` 中的 `DST1800` 与 `KP1800`
+
+脚本会把事件窗口内的数据落盘为 CSV，并生成一张三联图：
+
+- `(a)` IMF Bz
+- `(b)` Dst
+- `(c)` Kp
+
+详细说明见 [OMNIdarw/README.md](OMNIdarw/README.md)。
+
+### 4. run_logs
+
+`run_logs` 里既有运行日志，也有两个辅助批处理脚本：
+
+- `gnss_full_redraw.py`：全量并行重绘，已存在输出时直接跳过
+- `gnss_parallel_fill.py`：按时间阈值补绘“旧图”或“缺图”
+
+这两个脚本依赖当前仓库的绝对路径与现有配置文件，属于本机运维脚本，不是通用 CLI 工具。详细说明见 [run_logs/README.md](run_logs/README.md)。
+
+## 运行环境
+
+建议使用 Python 3.10 及以上版本。由于 `cartopy`、`apexpy` 等地学绘图库安装方式与平台相关，仓库没有提供统一的 `requirements.txt`，建议按模块安装。
+
+常见依赖如下：
 
 ```powershell
-pip install xarray netCDF4 numpy pandas matplotlib cartopy
+pip install numpy pandas matplotlib xarray netCDF4 cartopy apexpy
 ```
 
-### 1.4 使用方法
-
-#### 数据下载
-
-```powershell
-cd GNSSdraw/Data_download
-python download_nc_data.py --root . --dates 2024-05-09 2024-05-10
-```
-
-**参数说明**：
-| 参数 | 默认值 | 说明 |
-|------|--------|------|
-| `--root` | `.` | 项目根目录 |
-| `--year` | `2024` | 年份 |
-| `--doys` | `130 131 132 133 283 284 285 286` | 儒略日列表 |
-| `--dates` | 无 | UTC 日期（YYYY-MM-DD 格式，优先于 --year 和 --doys） |
-| `--workers` | `6` | 并行下载线程数 |
-| `--force` | 否 | 强制覆盖已存在文件 |
-
-#### 单张绘图
-
-```powershell
-cd GNSSdraw
-python -m GNSS_draw.main single --config GNSS_draw\config.toml
-```
-
-#### 批量绘图
-
-```powershell
-cd GNSSdraw
-python -m GNSS_draw.main batch --config GNSS_draw\config.toml
-```
-
-### 1.5 配置文件说明
-
-配置文件采用 TOML 格式，示例如下：
-
-```toml
-[data]
-root = "../Data_download"
-year = "2024"
-category = "VTEC"           # VTEC / dTEC / ROTI
-mode = "single"             # single / batch
-file = "../Data_download/VTEC_data/2024/130/2024050900_atec.nc"
-timestamp = "2024-05-09T00:10:00Z"
-doys = ["130"]
-
-[output]
-root = "./outputs"
-image_format = "png"
-dpi = 300
-
-[plot]
-region = "americas"         # global / asia_pacific / south_america / americas / custom
-lon_mode = "auto"           # auto / -180_180 / 0_360
-figure_size = [12.0, 6.75]
-font_family = "Times New Roman"
-show_magnetic_equator = true
-magnetic_equator_color = "red"
-magnetic_equator_linewidth = 1.5
-
-[style.vtec]
-cmap = "viridis"
-vmin = 0
-vmax = 80
-
-[region.custom]
-lon_min = -170
-lon_max = -20
-lat_min = -80
-lat_max = 80
-```
-
-### 1.6 输出结构
-
-```
-outputs/
-└── VTEC/
-    └── 2024/
-        └── 130/
-            └── VTEC_20240509T0010Z_americas.png
-```
-
----
-
-## 二、GOLDdraw - GOLD 卫星数据处理模块
-
-### 2.1 功能简介
-
-GOLDdraw 用于处理 NASA GOLD（Global-scale Observations of the Limb and Disk）卫星的 NI1 级数据，主要功能：
-
-- 读取 GOLD NI1 级 NetCDF 数据（135.6 nm 波长）
-- 自动匹配 CHA（北半球）和 CHB（南半球）通道数据对
-- 生成地理定位辐射亮度图像
-- 叠加磁赤道线
-- 支持多种可视化模式：单图、四面板图、网格合并图
-
-**科学背景**：135.6 nm 是氧原子发射线，是研究热层和电离层的重要光谱特征，可用于分析电子密度分布、夜间电离层结构等。
-
-### 2.2 数据来源
-
-- [NASA GOLD 数据门户](https://gold.cs.ucf.edu/data/)
-- [UCAR/NCAR 数据档案](https://www.ncei.noaa.gov/products/gold)
-
-### 2.3 环境要求
-
-- Python 3.10+
-- 依赖库：`numpy`, `netCDF4`, `matplotlib`, `cartopy`, `apexpy`
-
-```powershell
-pip install numpy netCDF4 matplotlib cartopy apexpy
-```
-
-### 2.4 脚本说明
-
-#### gold_ni1_map_1356.py - 主绘图脚本
-
-批量处理 tar 文件并生成单张 PNG 图像（散点图模式）。
-
-```powershell
-python gold_ni1_map_1356.py <tar文件或目录> [选项]
-```
-
-**参数说明**：
-| 参数 | 默认值 | 说明 |
-|------|--------|------|
-| `inputs` | `.` | tar 文件或目录 |
-| `--output-root` | `png_output` | 输出目录 |
-| `--target-nm` | `135.6` | 目标波长 (nm) |
-| `--max-pair-minutes` | `5.0` | CHA/CHB 配对最大时间差（分钟） |
-| `--quality-mode` | `all` | 质量过滤模式：`all` / `good` |
-| `--vmin` | `0.0` | 色标下限 (Rayleighs/nm) |
-| `--vmax` | `300.0` | 色标上限 (Rayleighs/nm) |
-| `--dpi` | `180` | 输出 DPI |
-| `--extent` | `-105 15 -60 60` | 地图范围（西、东、南、北） |
-
-#### gold_ni1_plot_stitched_v2.py - 增强版脚本
-
-使用 pcolormesh 绘制更平滑的图像，支持两种合并模式：
-
-- `native` 模式：保持原始数据网格
-- `grid` 模式：重采样到规则经纬度网格
-
-```powershell
-python gold_ni1_plot_stitched_v2.py data.tar --merge-mode grid --grid-step 0.5
-```
-
-#### gold_ni1_plot_four_panel.py - 四面板图脚本
-
-生成 2x2 四面板图像，适合对比不同时刻的观测数据。需在脚本中配置目标时间。
-
-### 2.5 输出说明
-
-**命名格式**：`<日期>T<时间>Z_CHA-<CHA时间>_CHB-<CHB时间>_<波长>nm.png`
-
-示例：`20240508T2010Z_CHA-2010_CHB-2010_135p6nm.png`
-
----
-
-## 三、OMNIdarw - OMNI 太阳风参数绘图模块
-
-### 3.1 功能简介
-
-OMNIdarw 用于从 NASA CDAWeb 获取 OMNI 太阳风参数数据，并生成适合论文使用的时间序列图：
-
-- **IMF Bz**：行星际磁场 Bz 分量（1 分钟分辨率）
-- **Dst 指数**：磁暴扰动时间指数（小时分辨率）
-- **Kp 指数**：行星 Kp 指数（3 小时分辨率）
-
-### 3.2 数据来源
-
-通过 NASA CDAWeb HAPI 接口获取：
-- Bz 数据：`OMNI_HRO2_1MIN` 数据集
-- Dst/Kp 数据：`OMNI2_H0_MRG1HR` 数据集
-
-### 3.3 环境要求
-
-- Python 3.10+
-- 依赖库：`numpy`, `pandas`, `matplotlib`
+如果只运行 OMNI 脚本，可最小安装：
 
 ```powershell
 pip install numpy pandas matplotlib
 ```
 
-### 3.4 使用方法
+## 快速开始
+
+### GNSS 数据下载
 
 ```powershell
-cd OMNIdarw/scripts
+cd D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download
+python download_nc_data.py --root . --dates 2024-05-09 2024-05-10
+```
+
+### GNSS 单张绘图
+
+```powershell
+cd D:\Desktop\lzt_thesis_code\GNSSdraw
+python -m GNSS_draw.main single --config GNSS_draw\config.example.toml
+```
+
+### GNSS 批量绘图
+
+```powershell
+cd D:\Desktop\lzt_thesis_code\GNSSdraw
+python -m GNSS_draw.main batch --config GNSS_draw\config_vtec.toml
+```
+
+### GOLD 批量出图
+
+```powershell
+cd D:\Desktop\lzt_thesis_code\GOLDdraw
+python gold_ni1_plot_stitched_v2.py . --merge-mode native --output-root png_output
+```
+
+### OMNI 三联图
+
+```powershell
+cd D:\Desktop\lzt_thesis_code\OMNIdarw\scripts
 python plot_omni_timeseries.py
 ```
 
-### 3.5 事件窗口配置
+## 数据与输出目录
 
-在脚本中定义事件窗口：
+仓库中已经包含大量样例数据和产出结果，典型结构如下：
 
-```python
-EVENT_WINDOWS: tuple[EventWindow, ...] = (
-    EventWindow("20240510_20240513", "2024-05-10T00:00:00Z", "2024-05-13T00:00:00Z"),
-    EventWindow("20241010_20241013", "2024-10-10T00:00:00Z", "2024-10-13T00:00:00Z"),
-    EventWindow("20241231_20250103", "2024-12-31T00:00:00Z", "2025-01-03T00:00:00Z"),
-)
-```
+- `GNSSdraw/Data_download/*_data/<year>/<doy>/*.nc`
+- `GNSSdraw/GNSS_draw/outputs/<category>/<year>/<doy>/*.png`
+- `GOLDdraw/png_output/<tar-name>/*.png`
+- `GOLDdraw/four_panel_output/*.png`
+- `OMNIdarw/outputs/data/*.csv`
+- `OMNIdarw/outputs/figures/*.png`
 
-### 3.6 输出说明
+这些目录主要用于论文作图复现和结果留档。
 
-**数据文件**：
-- `omni_bz_1min_<slug>.csv`：IMF Bz 1 分钟数据
-- `omni_dst_kp_hourly_<slug>.csv`：Dst/Kp 小时数据
-- `omni_kp_3hour_<slug>.csv`：Kp 3 小时数据
+## 文档索引
 
-**图像文件**：
-- `omni_timeseries_<slug>.png`：三面板时间序列图
+- [GNSS 下载说明](GNSSdraw/Data_download/README.md)
+- [GNSS 绘图说明](GNSSdraw/GNSS_draw/README.md)
+- [GOLD 脚本说明](GOLDdraw/README.md)
+- [OMNI 脚本说明](OMNIdarw/README.md)
+- [批处理脚本说明](run_logs/README.md)
 
----
+## 注意事项
 
-## 四、通用依赖安装
-
-```powershell
-pip install xarray netCDF4 numpy pandas matplotlib cartopy apexpy
-```
-
----
-
-## 五、项目特点
-
-1. **统一风格**：所有模块均采用论文级别的图像输出标准，支持 Times New Roman 字体
-2. **灵活配置**：支持通过配置文件或命令行参数进行定制
-3. **批量处理**：支持批量处理大量数据文件
-4. **科学可视化**：支持磁赤道线叠加、地理投影、统一色标等专业功能
-
----
-
-## 六、参考文献
-
-- [NASA GOLD Mission](https://gold.cs.ucf.edu/)
-- [NASA CDAWeb](https://cdaweb.gsfc.nasa.gov/)
-- [名古屋大学 ISEE GNSS-TEC 数据库](https://stdb2.isee.nagoya-u.ac.jp/)
-- [ApexPy Documentation](https://apexpy.readthedocs.io/)
-
----
-
-## 七、许可证
-
-本项目仅供科研和教育用途。
+- 这不是一个经过包装发布的 Python 包，默认工作方式是“在仓库目录中直接运行脚本”。
+- `run_logs` 下的辅助脚本写死了绝对路径，如果仓库移动位置，需要同步修改。
+- `gold_ni1_plot_four_panel.py` 当前仍通过脚本内部变量指定输入 tar 包、目标时刻和输出路径。
+- `GNSS_draw` 的批量模式会在遇到空切片或裁剪后无有效值时记录警告并跳过，不会中断整批任务。
+- 仓库中的文档现在以“当前已实现行为”为准，不再保留过时的需求文档。

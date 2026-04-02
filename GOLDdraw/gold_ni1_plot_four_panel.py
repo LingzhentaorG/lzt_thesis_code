@@ -1,5 +1,9 @@
 #!/usr/bin/env python
-"""Plot GOLD NI1 135.6 nm data as a 2x2 four-panel figure from tar archive."""
+"""GOLD NI1 四面板制图脚本。
+
+该脚本用于从单个 `.tar` 归档中抽取 4 个目标时刻附近的 `CHA/CHB` 配对，
+并输出一张适合论文排版的 2x2 四面板图。
+"""
 
 from __future__ import annotations
 
@@ -31,7 +35,7 @@ FILE_PATTERN = re.compile(
 
 @dataclass(frozen=True)
 class ArchiveEntry:
-    """Represents a single NetCDF file entry within a tar archive."""
+    """表示归档内的一个 GOLD NI1 NetCDF 成员。"""
     tar_path: Path
     member_name: str
     hemisphere: str
@@ -40,18 +44,18 @@ class ArchiveEntry:
 
 @dataclass(frozen=True)
 class PairMatch:
-    """Represents a matched pair of CHA and CHB observations."""
+    """表示一个已经匹配成功的 `CHA/CHB` 观测对。"""
     cha: ArchiveEntry
     chb: ArchiveEntry
 
     @property
     def midpoint(self) -> datetime:
-        """Calculate the midpoint time between CHA and CHB observations."""
+        """返回两次观测时间的中点。"""
         return self.cha.obs_time + (self.chb.obs_time - self.cha.obs_time) / 2
 
 
 def parse_entry(tar_path: Path, member_name: str) -> ArchiveEntry | None:
-    """Parse a tar member name to extract hemisphere and observation time."""
+    """从成员文件名中解析半球标识和观测时间。"""
     match = FILE_PATTERN.search(member_name)
     if not match:
         return None
@@ -66,7 +70,7 @@ def parse_entry(tar_path: Path, member_name: str) -> ArchiveEntry | None:
 
 
 def discover_entries(tar_path: Path) -> list[ArchiveEntry]:
-    """Discover all valid NI1 entries within a tar archive."""
+    """扫描归档并提取全部可识别的 NI1 成员。"""
     entries: list[ArchiveEntry] = []
     with tarfile.open(tar_path) as archive:
         for member in archive.getmembers():
@@ -81,7 +85,7 @@ def discover_entries(tar_path: Path) -> list[ArchiveEntry]:
 def match_pair_by_time(
     entries: list[ArchiveEntry], target_time: datetime, max_delta_minutes: float = 5.0
 ) -> PairMatch | None:
-    """Find a matching CHA/CHB pair closest to the target time."""
+    """为目标时刻寻找最接近的 `CHA/CHB` 观测对。"""
     cha_entries = [e for e in entries if e.hemisphere == "CHA"]
     chb_entries = [e for e in entries if e.hemisphere == "CHB"]
 
@@ -113,7 +117,7 @@ def match_pair_by_time(
 
 
 def read_dataset_bytes(archive: tarfile.TarFile, member_name: str) -> bytes:
-    """Read the raw bytes of a file from within a tar archive."""
+    """读取 tar 归档内指定成员的原始字节。"""
     extracted = archive.extractfile(member_name)
     if extracted is None:
         raise FileNotFoundError(f"Failed to read {member_name} from archive.")
@@ -126,7 +130,7 @@ def read_geo_grid(
     target_nm: float,
     quality_mode: str,
 ) -> tuple[np.ndarray, np.ndarray, np.ma.MaskedArray]:
-    """Read geographic coordinates and radiance data from a NetCDF file."""
+    """读取单个观测条带的经纬度网格与目标波长辐亮度。"""
     dataset_bytes = read_dataset_bytes(archive, member_name)
     with Dataset("inmemory.nc", memory=dataset_bytes) as dataset:
         latitude = np.ma.filled(dataset.variables["REFERENCE_POINT_LAT"][:], np.nan).astype(np.float64)
@@ -135,6 +139,7 @@ def read_geo_grid(
         radiance = np.ma.filled(dataset.variables["RADIANCE"][:], np.nan).astype(np.float64)
         quality_flag = np.ma.filled(dataset.variables["QUALITY_FLAG"][:], 0).astype(np.uint32)
 
+    # 对每个像元找到最接近目标波长的位置。
     nearest_index = np.abs(wavelength - target_nm).argmin(axis=2)
     radiance_1356 = np.take_along_axis(radiance, nearest_index[..., None], axis=2)[..., 0]
 
@@ -153,7 +158,7 @@ def read_geo_grid(
 
 
 def estimate_median_spacing(lon: np.ndarray, lat: np.ndarray) -> float:
-    """Estimate the median spacing between adjacent grid points."""
+    """估计相邻网格点的中位间距，用于后续间隙检测。"""
     finite = np.isfinite(lon) & np.isfinite(lat)
     dx = np.hypot(np.diff(lon, axis=1), np.diff(lat, axis=1))
     dy = np.hypot(np.diff(lon, axis=0), np.diff(lat, axis=0))
@@ -172,7 +177,7 @@ def estimate_median_spacing(lon: np.ndarray, lat: np.ndarray) -> float:
 
 
 def center_to_edges(center: np.ndarray) -> np.ndarray:
-    """Convert center coordinates to edge coordinates for pcolormesh."""
+    """把中心点坐标近似换算为 `pcolormesh` 所需的边界坐标。"""
     m, n = center.shape
     edge = np.full((m + 1, n + 1), np.nan, dtype=np.float64)
     finite = np.isfinite(center)
@@ -215,7 +220,7 @@ def build_cell_mask(
     lat_edge: np.ndarray,
     gap_factor: float,
 ) -> np.ndarray:
-    """Build a mask for pcolormesh cells based on validity and gap detection."""
+    """根据有效性和几何间隙构造 `pcolormesh` 单元掩码。"""
     center_valid = np.isfinite(lon) & np.isfinite(lat) & ~np.ma.getmaskarray(data)
     edge_valid = np.isfinite(lon_edge) & np.isfinite(lat_edge)
 
@@ -250,7 +255,7 @@ def build_cell_mask(
 
 
 def sanitize_edge_array(edge: np.ndarray, fallback: float) -> np.ndarray:
-    """Replace invalid edge coordinates with a fallback value."""
+    """把无效边界坐标替换成回退值，避免绘图函数报错。"""
     clean = np.array(edge, copy=True)
     clean[~np.isfinite(clean)] = fallback
     return clean
@@ -267,7 +272,7 @@ def plot_swath(
     point_size: float,
     gap_factor: float,
 ):
-    """Plot a single swath using pcolormesh or scatter as fallback."""
+    """绘制单个观测条带，优先用 `pcolormesh`，必要时退回散点图。"""
     if lon.ndim != 2 or lat.ndim != 2 or z.ndim != 2 or min(z.shape) < 2:
         finite = np.isfinite(lon) & np.isfinite(lat) & ~np.ma.getmaskarray(z)
         return ax.scatter(
@@ -329,7 +334,7 @@ def plot_swath(
 
 
 def add_map_background(ax: GeoAxes) -> None:
-    """Add map background features to a GeoAxes."""
+    """为地图添加海洋、陆地、海岸线、边界和经纬网背景。"""
     ax.set_facecolor("#b7d6e6")
     ax.add_feature(
         cfeature.OCEAN.with_scale("110m"),
@@ -372,7 +377,7 @@ def compute_magnetic_equator(
     extent: tuple[float, float, float, float],
     num_points: int = 500,
 ) -> tuple[np.ndarray, np.ndarray]:
-    """Compute the magnetic equator coordinates within the given extent."""
+    """在给定图幅范围内计算磁赤道坐标。"""
     west, east, south, north = extent
     lon_line = np.linspace(west, east, num_points)
     lat_line = np.zeros_like(lon_line)
@@ -393,7 +398,7 @@ def compute_magnetic_equator(
 
 
 def add_magnetic_equator(ax: GeoAxes, apex: Apex, extent: tuple[float, float, float, float]) -> None:
-    """Add the magnetic equator line to the map."""
+    """在地图上叠加磁赤道。"""
     try:
         lon_eq, lat_eq = compute_magnetic_equator(apex, extent)
         if len(lon_eq) > 1:
@@ -411,10 +416,10 @@ def add_magnetic_equator(ax: GeoAxes, apex: Apex, extent: tuple[float, float, fl
 
 
 def format_panel_title(pair: PairMatch) -> str:
-    """Format the title for a single panel.
-    
-    When CHA and CHB observation times differ, display both times.
-    Format: '2024-10-10 23:22UT  |  CHA 23:21 + CHB 23:24'
+    """生成单个子图标题。
+
+    当 `CHA` 与 `CHB` 的观测时间不完全一致时，同时显示两者时间，
+    例如：`2024-10-10 23:22UT  |  CHA 23:21 + CHB 23:24`。
     """
     midpoint = pair.midpoint.strftime("%Y-%m-%d %H:%MUT")
     if pair.cha.obs_time == pair.chb.obs_time:
@@ -429,7 +434,7 @@ def estimate_projected_aspect(
     extent: tuple[float, float, float, float],
     num_samples: int = 181,
 ) -> float:
-    """Estimate the projected width/height ratio of a map extent."""
+    """估计图幅在当前投影下的宽高比。"""
     west, east, south, north = extent
 
     lon_top = np.linspace(west, east, num_samples)
@@ -482,7 +487,7 @@ def create_four_panel_figure(
     vmax: float = 300.0,
     dpi: int = 180,
 ) -> bool:
-    """Create a 2x2 four-panel figure from the specified times in a tar archive."""
+    """根据指定目标时刻生成 2x2 四面板图。"""
     entries = discover_entries(tar_path)
     if not entries:
         print(f"[ERROR] No entries found in {tar_path}")
@@ -499,6 +504,7 @@ def create_four_panel_figure(
         print("[ERROR] No valid pairs found for any target time")
         return False
 
+    # 去掉没有找到配对的时刻后，再按照真实中点时间排序，保证面板顺序稳定。
     valid_pairs = [(i, p) for i, p in enumerate(pairs) if p is not None]
     valid_pairs.sort(key=lambda item: item[1].midpoint)
     sorted_indices = {orig_idx: new_idx for new_idx, (orig_idx, _) in enumerate(valid_pairs)}
@@ -523,8 +529,8 @@ def create_four_panel_figure(
     max_plot_width = (available_width - h_gap) / 2.0
     max_plot_height = (available_height - v_gap) / 2.0
 
-    # Cartopy keeps the geographic aspect ratio inside each GeoAxes.
-    # If the axes box is too wide, the extra width becomes internal blank space.
+    # Cartopy 会保持 GeoAxes 的地理宽高比，因此这里手工推算子图尺寸，
+    # 以减少子图内部多余留白。
     plot_width = max_plot_height * (fig_height / fig_width) * map_aspect
     plot_height = max_plot_height
 
@@ -607,7 +613,11 @@ def create_four_panel_figure(
 
 
 def main() -> int:
-    """Main entry point for the four-panel plot generation script."""
+    """脚本主入口。
+
+    当前版本通过脚本内部变量指定输入 tar 包、目标时刻和输出位置，
+    适合论文中一次性的固定版式出图任务。
+    """
     tar_path = Path(r"d:\Desktop\GOLDdraw\NI2024100820241014.tar")
 
     target_times = [

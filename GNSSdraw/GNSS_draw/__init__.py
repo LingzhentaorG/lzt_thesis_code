@@ -1,5 +1,10 @@
-"""GNSS netCDF plotting package."""
+"""GNSS 网格产品绘图包。
+
+该包负责把已经下载好的 GNSS netCDF 数据转换为论文用地图，
+对外暴露的版本号仅用于标识当前仓库内模块状态。
+"""
 
 __all__ = ["__version__"]
 
+# 当前包版本号，仅用于项目内部标识。
 __version__ = "0.1.0"

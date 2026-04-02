@@ -1,3 +1,12 @@
+"""OMNI 参数时间序列绘图脚本。
+
+脚本会针对预先定义好的事件窗口：
+
+1. 从 CDAWeb HAPI 接口下载 IMF Bz、Dst、Kp 数据
+2. 输出标准化 CSV
+3. 生成三联时间序列图
+"""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -24,22 +33,27 @@ FIG_DIR = OUTPUT_ROOT / "figures"
 
 @dataclass(frozen=True)
 class EventWindow:
+    """表示一个待处理的空间天气事件时间窗口。"""
+
     slug: str
     start: str
     end: str
 
     @property
     def title_range(self) -> str:
+        """返回用于图题的时间范围字符串。"""
         start_dt = pd.Timestamp(self.start).strftime("%Y-%m-%d %H:%M")
         end_dt = pd.Timestamp(self.end).strftime("%Y-%m-%d %H:%M")
         return f"{start_dt} to {end_dt} UTC"
 
     @property
     def start_ts(self) -> pd.Timestamp:
+        """返回起始时间的 UTC 时间戳。"""
         return pd.Timestamp(self.start).tz_convert("UTC")
 
     @property
     def end_ts(self) -> pd.Timestamp:
+        """返回结束时间的 UTC 时间戳。"""
         return pd.Timestamp(self.end).tz_convert("UTC")
 
 
@@ -51,6 +65,7 @@ EVENT_WINDOWS: tuple[EventWindow, ...] = (
 
 
 def configure_matplotlib() -> None:
+    """配置论文风格的 Matplotlib 全局参数。"""
     available_fonts = {font.name for font in font_manager.fontManager.ttflist}
     serif_fonts = [
         "Times New Roman",
@@ -72,6 +87,7 @@ def configure_matplotlib() -> None:
 
 
 def kp_code_to_decimal(value: float | int | None) -> float:
+    """把 CDAWeb 提供的 Kp 编码转换成常见的十进制 Kp。"""
     if value is None or pd.isna(value):
         return np.nan
     value = int(value)
@@ -83,6 +99,7 @@ def kp_code_to_decimal(value: float | int | None) -> float:
 
 
 def hapi_query(dataset_id: str, parameters: str, start: str, end: str) -> str:
+    """构造 CDAWeb HAPI CSV 查询 URL。"""
     query = {
         "id": dataset_id,
         "parameters": parameters,
@@ -94,6 +111,7 @@ def hapi_query(dataset_id: str, parameters: str, start: str, end: str) -> str:
 
 
 def fetch_csv(url: str, column_names: list[str]) -> pd.DataFrame:
+    """请求 HAPI CSV，并读入 `pandas.DataFrame`。"""
     with urlopen(url, timeout=90) as response:
         payload = response.read().decode("utf-8", errors="replace")
     if "HAPI error" in payload:
@@ -102,6 +120,7 @@ def fetch_csv(url: str, column_names: list[str]) -> pd.DataFrame:
 
 
 def fetch_bz_window(window: EventWindow) -> pd.DataFrame:
+    """获取单个事件窗口的 IMF Bz 1 分钟数据。"""
     url = hapi_query(BZ_DATASET_ID, "BZ_GSM", window.start, window.end)
     frame = fetch_csv(url, ["Time", "IMF_Bz_nT"])
     frame["Time"] = pd.to_datetime(frame["Time"], utc=True)
@@ -110,11 +129,13 @@ def fetch_bz_window(window: EventWindow) -> pd.DataFrame:
 
 
 def fetch_index_window(window: EventWindow) -> pd.DataFrame:
+    """获取单个事件窗口的 Dst 和 Kp 数据。"""
     url = hapi_query(INDEX_DATASET_ID, "KP1800,DST1800", window.start, window.end)
     frame = fetch_csv(url, ["Time", "Kp_code", "Dst_nT"])
     frame["Time"] = pd.to_datetime(frame["Time"], utc=True)
     frame = frame.sort_values("Time").reset_index(drop=True)
 
+    # 这里把小时数据中心时间平移到整点左边 30 分钟，便于在图上和小时区间对齐。
     frame["PlotTime"] = frame["Time"] - pd.Timedelta(minutes=30)
     frame["Dst_nT"] = frame["Dst_nT"].replace(99999, np.nan)
     frame["Kp_code"] = frame["Kp_code"].replace(99, np.nan)
@@ -123,6 +144,7 @@ def fetch_index_window(window: EventWindow) -> pd.DataFrame:
 
 
 def reduce_kp_to_3hour(indices_frame: pd.DataFrame) -> pd.DataFrame:
+    """把小时表中的 Kp 还原为标准的 3 小时时间段表示。"""
     kp_frame = indices_frame.loc[:, ["PlotTime", "Kp"]].dropna().copy()
     kp_frame["KpStart"] = kp_frame["PlotTime"].dt.floor("3h")
     kp_frame = kp_frame.groupby("KpStart", as_index=False)["Kp"].first()
@@ -131,6 +153,7 @@ def reduce_kp_to_3hour(indices_frame: pd.DataFrame) -> pd.DataFrame:
 
 
 def save_bz_csv(frame: pd.DataFrame, window: EventWindow) -> Path:
+    """保存 Bz 数据 CSV。"""
     output_path = DATA_DIR / f"omni_bz_1min_{window.slug}.csv"
     export_frame = frame.copy()
     export_frame["Time"] = export_frame["Time"].dt.strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -139,6 +162,7 @@ def save_bz_csv(frame: pd.DataFrame, window: EventWindow) -> Path:
 
 
 def save_indices_csv(frame: pd.DataFrame, kp_frame: pd.DataFrame, window: EventWindow) -> tuple[Path, Path]:
+    """分别保存小时级 Dst/Kp 表和 3 小时 Kp 表。"""
     hourly_path = DATA_DIR / f"omni_dst_kp_hourly_{window.slug}.csv"
     kp_path = DATA_DIR / f"omni_kp_3hour_{window.slug}.csv"
 
@@ -156,6 +180,7 @@ def save_indices_csv(frame: pd.DataFrame, kp_frame: pd.DataFrame, window: EventW
 
 
 def add_common_axis_style(axis: plt.Axes) -> None:
+    """为三幅子图施加统一的坐标轴和网格样式。"""
     axis.grid(True, axis="y", which="major", linestyle="--", linewidth=0.55, color="#d0d0d0")
     axis.grid(True, axis="x", which="major", linestyle=":", linewidth=0.45, color="#e0e0e0")
     axis.tick_params(which="major", direction="in", top=True, right=True, length=6, width=0.9, labelsize=10)
@@ -164,6 +189,7 @@ def add_common_axis_style(axis: plt.Axes) -> None:
 
 
 def add_stat_text(axis: plt.Axes, text: str) -> None:
+    """在子图左上角添加统计信息文本框。"""
     axis.text(
         0.012,
         0.92,
@@ -177,6 +203,7 @@ def add_stat_text(axis: plt.Axes, text: str) -> None:
 
 
 def plot_window(bz_frame: pd.DataFrame, indices_frame: pd.DataFrame, kp_frame: pd.DataFrame, window: EventWindow) -> Path:
+    """为单个事件窗口绘制三联时间序列图。"""
     bz_time = bz_frame["Time"].dt.tz_convert("UTC").dt.tz_localize(None)
     bz = bz_frame["IMF_Bz_nT"]
 
@@ -248,6 +275,7 @@ def plot_window(bz_frame: pd.DataFrame, indices_frame: pd.DataFrame, kp_frame: p
 
 
 def main() -> None:
+    """脚本主入口。"""
     configure_matplotlib()
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     FIG_DIR.mkdir(parents=True, exist_ok=True)

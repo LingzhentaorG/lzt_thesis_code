@@ -1,3 +1,12 @@
+"""GNSS 全量并行重绘脚本。
+
+该脚本面向当前工作站环境，用于：
+
+1. 扫描三类 GNSS 数据的所有年份和年积日目录
+2. 为每个 `(category, year, doy)` 生成一个并行任务
+3. 仅对缺失图片执行重绘
+"""
+
 from __future__ import annotations
 
 from concurrent.futures import ProcessPoolExecutor, as_completed
@@ -27,6 +36,7 @@ SOURCE_DIRS = {
 
 
 def build_tasks() -> list[tuple[str, str, str, str]]:
+    """枚举所有需要并行处理的 `(配置, 类别, 年份, 年积日)` 任务。"""
     tasks: list[tuple[str, str, str, str]] = []
     for category, config_path in CATEGORY_CONFIGS.items():
         config = load_config(config_path, "batch")
@@ -38,6 +48,7 @@ def build_tasks() -> list[tuple[str, str, str, str]]:
 
 
 def render_task(task: tuple[str, str, str, str]) -> tuple[str, str, str, int, int, int]:
+    """执行单个年积日任务，并返回统计结果。"""
     config_path, category, year, doy = task
     config = load_config(config_path, "batch")
     files = scan_nc_files(config.data.root, category, year, doys=(doy,))
@@ -61,6 +72,7 @@ def render_task(task: tuple[str, str, str, str]) -> tuple[str, str, str, int, in
 
 
 def main() -> int:
+    """脚本主入口。"""
     tasks = build_tasks()
     max_workers = min(12, os.cpu_count() or 8, len(tasks))
     print(f"[INFO] Starting GNSS full redraw with {len(tasks)} tasks and {max_workers} workers.", flush=True)

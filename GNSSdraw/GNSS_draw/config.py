@@ -1,3 +1,9 @@
+"""GNSS 绘图配置解析模块。
+
+本模块把 TOML 配置文件转换为类型明确的配置对象，供读取、预处理、
+绘图和批处理模块统一使用。
+"""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -6,6 +12,7 @@ from typing import Any
 import tomllib
 
 
+# 支持把不同大小写或别名统一映射到项目内部使用的类别名。
 CATEGORY_ALIASES = {
     "vtec": "VTEC",
     "atec": "VTEC",
@@ -13,18 +20,21 @@ CATEGORY_ALIASES = {
     "roti": "ROTI",
 }
 
+# 各类别在数据下载目录中的子目录名。
 SOURCE_DIRS = {
     "VTEC": "VTEC_data",
     "dTEC": "dTEC_data",
     "ROTI": "ROTI_data",
 }
 
+# 样式节名与类别名的映射关系。
 STYLE_SECTION_NAMES = {
     "VTEC": "vtec",
     "dTEC": "dtec",
     "ROTI": "roti",
 }
 
+# 预设绘图区域。
 REGION_PRESETS = {
     "global": (-180.0, 180.0, -90.0, 90.0),
     "asia_pacific": (60.0, 180.0, -50.0, 60.0),
@@ -32,18 +42,21 @@ REGION_PRESETS = {
     "americas": (-170.0, -20.0, -80.0, 80.0),
 }
 
+# 各类别的默认色标配置。
 DEFAULT_STYLES = {
     "VTEC": {"cmap": "viridis", "vmin": 0.0, "vmax": 80.0},
     "dTEC": {"cmap": "viridis", "vmin": -0.4, "vmax": 0.4},
     "ROTI": {"cmap": "viridis", "vmin": 0.0, "vmax": 1.0},
 }
 
+# 输出格式允许写多种别名，但最终只归一化为 png 或 jpg。
 SUPPORTED_IMAGE_FORMATS = {
     "png": "png",
     "jpg": "jpg",
     "jpeg": "jpg",
 }
 
+# 允许用户用多种写法表达经度体系。
 SUPPORTED_LON_MODES = {
     "auto": "auto",
     "-180_180": "-180_180",
@@ -55,6 +68,7 @@ SUPPORTED_LON_MODES = {
     "360": "0_360",
 }
 
+# 区域名称同样支持少量别名。
 REGION_ALIASES = {
     "global": "global",
     "asia_pacific": "asia_pacific",
@@ -69,6 +83,8 @@ REGION_ALIASES = {
 
 @dataclass(frozen=True)
 class StyleConfig:
+    """单一类别的绘图样式配置。"""
+
     cmap: str
     vmin: float
     vmax: float
@@ -76,6 +92,8 @@ class StyleConfig:
 
 @dataclass(frozen=True)
 class CustomRegion:
+    """自定义区域的经纬度范围。"""
+
     lon_min: float
     lon_max: float
     lat_min: float
@@ -84,6 +102,8 @@ class CustomRegion:
 
 @dataclass(frozen=True)
 class MagneticEquatorConfig:
+    """磁赤道绘制选项。"""
+
     enabled: bool
     color: str
     linewidth: float
@@ -91,6 +111,8 @@ class MagneticEquatorConfig:
 
 @dataclass(frozen=True)
 class DataConfig:
+    """输入数据相关配置。"""
+
     root: Path
     year: str
     years: tuple[str, ...] | None
@@ -104,6 +126,8 @@ class DataConfig:
 
 @dataclass(frozen=True)
 class OutputConfig:
+    """输出目录与图像格式配置。"""
+
     root: Path
     image_format: str
     dpi: int
@@ -111,6 +135,8 @@ class OutputConfig:
 
 @dataclass(frozen=True)
 class PlotConfig:
+    """绘图区域、尺寸和字体配置。"""
+
     region: str
     lon_mode: str
     figure_size: tuple[float, float]
@@ -120,6 +146,8 @@ class PlotConfig:
 
 @dataclass(frozen=True)
 class AppConfig:
+    """汇总后的应用级配置对象。"""
+
     config_path: Path
     data: DataConfig
     output: OutputConfig
@@ -128,10 +156,12 @@ class AppConfig:
     custom_region: CustomRegion | None
 
     def style_for(self, category: str) -> StyleConfig:
+        """按类别返回对应的绘图样式。"""
         return self.styles[category]
 
 
 def load_config(config_path: str | Path, cli_mode: str) -> AppConfig:
+    """加载 TOML 配置，并转换为 `AppConfig`。"""
     path = Path(config_path).expanduser().resolve()
     if not path.exists():
         raise FileNotFoundError(f"Config file does not exist: {path}")
@@ -206,6 +236,7 @@ def load_config(config_path: str | Path, cli_mode: str) -> AppConfig:
 
 
 def normalize_category(value: Any) -> str:
+    """把配置中的类别写法归一化到标准名称。"""
     key = str(value).strip().lower()
     category = CATEGORY_ALIASES.get(key)
     if category is None:
@@ -215,6 +246,7 @@ def normalize_category(value: Any) -> str:
 
 
 def _get_table(raw: dict[str, Any], key: str) -> dict[str, Any]:
+    """安全读取某个 TOML 节，不存在时返回空字典。"""
     value = raw.get(key, {})
     if value is None:
         return {}
@@ -224,12 +256,17 @@ def _get_table(raw: dict[str, Any], key: str) -> dict[str, Any]:
 
 
 def _resolve_path(raw: Any, base_dir: Path, default: Path) -> Path:
+    """把路径字段解析为绝对路径。"""
     if raw is None:
         return default.resolve()
     return _candidate_path(Path(str(raw)), base_dir).resolve()
 
 
 def _resolve_optional_file(raw: Any, base_dir: Path, data_root: Path) -> Path | None:
+    """解析可选输入文件路径。
+
+    相对路径优先相对配置文件目录解析；如果不存在，再尝试相对数据根目录。
+    """
     if raw is None:
         return None
     candidate = Path(str(raw)).expanduser()
@@ -248,12 +285,14 @@ def _resolve_optional_file(raw: Any, base_dir: Path, data_root: Path) -> Path | 
 
 
 def _candidate_path(path: Path, base_dir: Path) -> Path:
+    """把绝对/相对路径统一成候选路径对象。"""
     if path.is_absolute():
         return path.expanduser()
     return (base_dir / path).expanduser()
 
 
 def _normalize_mode(value: Any) -> str:
+    """校验绘图模式字段。"""
     mode = str(value).strip().lower()
     if mode not in {"single", "batch"}:
         raise ValueError("Config field data.mode must be 'single' or 'batch'.")
@@ -261,6 +300,7 @@ def _normalize_mode(value: Any) -> str:
 
 
 def _normalize_image_format(value: Any) -> str:
+    """校验并归一化输出图像格式。"""
     image_format = str(value).strip().lower()
     normalized = SUPPORTED_IMAGE_FORMATS.get(image_format)
     if normalized is None:
@@ -270,6 +310,7 @@ def _normalize_image_format(value: Any) -> str:
 
 
 def _normalize_region(value: Any) -> str:
+    """校验区域名称。"""
     key = str(value).strip().lower()
     region = REGION_ALIASES.get(key)
     if region is None:
@@ -279,6 +320,7 @@ def _normalize_region(value: Any) -> str:
 
 
 def _normalize_lon_mode(value: Any) -> str:
+    """校验经度模式。"""
     key = str(value).strip().lower()
     lon_mode = SUPPORTED_LON_MODES.get(key)
     if lon_mode is None:
@@ -288,6 +330,7 @@ def _normalize_lon_mode(value: Any) -> str:
 
 
 def _parse_optional_int(value: Any, name: str) -> int | None:
+    """解析可选整数配置。"""
     if value is None:
         return None
     try:
@@ -297,6 +340,7 @@ def _parse_optional_int(value: Any, name: str) -> int | None:
 
 
 def _parse_doys(value: Any) -> tuple[str, ...] | None:
+    """把年积日数组统一为三位字符串元组。"""
     if value is None:
         return None
     if not isinstance(value, list):
@@ -305,6 +349,7 @@ def _parse_doys(value: Any) -> tuple[str, ...] | None:
 
 
 def _parse_years(value: Any) -> tuple[str, ...] | None:
+    """解析多年份列表，并自动去重保序。"""
     if value is None:
         return None
     if not isinstance(value, list):
@@ -323,6 +368,7 @@ def _parse_years(value: Any) -> tuple[str, ...] | None:
 
 
 def _parse_figure_size(value: Any) -> tuple[float, float]:
+    """解析图幅尺寸，必须恰好包含两个数。"""
     if not isinstance(value, (list, tuple)) or len(value) != 2:
         raise ValueError("Config field plot.figure_size must contain exactly two numbers.")
     try:
@@ -332,6 +378,7 @@ def _parse_figure_size(value: Any) -> tuple[float, float]:
 
 
 def _parse_style(value: Any, defaults: dict[str, float | str]) -> StyleConfig:
+    """读取某个类别的样式节，缺失字段时回退到默认值。"""
     table = value or {}
     if not isinstance(table, dict):
         raise ValueError("Each [style.<category>] section must be a table.")
@@ -346,6 +393,7 @@ def _parse_style(value: Any, defaults: dict[str, float | str]) -> StyleConfig:
 
 
 def _parse_custom_region(value: Any) -> CustomRegion | None:
+    """解析自定义区域。"""
     if value is None:
         return None
     if not isinstance(value, dict):
@@ -365,15 +413,7 @@ def _parse_custom_region(value: Any) -> CustomRegion | None:
 
 
 def _parse_magnetic_equator(plot_table: dict[str, Any]) -> MagneticEquatorConfig:
-    """
-    解析磁赤道配置选项。
-
-    Args:
-        plot_table: plot 配置部分的字典
-
-    Returns:
-        MagneticEquatorConfig: 磁赤道配置对象
-    """
+    """解析磁赤道绘制开关与样式字段。"""
     enabled = bool(plot_table.get("show_magnetic_equator", False))
     color = str(plot_table.get("magnetic_equator_color", "red")).strip() or "red"
     try:

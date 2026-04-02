@@ -1,3 +1,13 @@
+"""GNSS netCDF 读取模块。
+
+本模块负责：
+
+- 扫描本地数据目录
+- 识别 netCDF 中的时间、纬度、经度和数据变量
+- 按指定时间戳或索引读取二维切片
+- 为批处理模式迭代输出全部时间切片
+"""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -11,9 +21,12 @@ import xarray as xr
 from .config import SOURCE_DIRS
 
 
+# 常见坐标变量候选名。
 TIME_CANDIDATES = ("time",)
 LAT_CANDIDATES = ("lat", "latitude")
 LON_CANDIDATES = ("lon", "longitude")
+
+# 不同类别数据在 netCDF 中可能出现的数据变量名。
 DATA_VAR_CANDIDATES = {
     "VTEC": ("atec", "vtec", "tec"),
     "dTEC": ("dtec",),
@@ -23,6 +36,8 @@ DATA_VAR_CANDIDATES = {
 
 @dataclass(frozen=True)
 class DatasetSchema:
+    """描述一个 netCDF 文件中关键变量和维度的映射关系。"""
+
     time_name: str
     time_dim: str
     lat_name: str
@@ -34,6 +49,8 @@ class DatasetSchema:
 
 @dataclass(frozen=True)
 class NcFileInfo:
+    """批处理前对单个 `.nc` 文件的轻量检查结果。"""
+
     path: Path
     year: str
     doy: str
@@ -42,11 +59,14 @@ class NcFileInfo:
 
     @property
     def first_timestamp(self) -> pd.Timestamp:
+        """返回文件中的首个时间，用于跨文件排序。"""
         return self.times[0]
 
 
 @dataclass(frozen=True)
 class SliceData:
+    """原始二维时间切片，尚未做经度转换与区域裁剪。"""
+
     category: str
     source_path: Path
     year: str
@@ -60,6 +80,7 @@ class SliceData:
 
 
 def scan_nc_files(data_root: Path, category: str, year: str, doys: tuple[str, ...] | None = None) -> list[Path]:
+    """扫描指定类别和年份下的 `.nc` 文件列表。"""
     category_root = data_root / SOURCE_DIRS[category] / year
     if not category_root.exists():
         raise FileNotFoundError(f"Data directory does not exist: {category_root}")
@@ -82,6 +103,7 @@ def scan_nc_files(data_root: Path, category: str, year: str, doys: tuple[str, ..
 
 
 def inspect_file(file_path: str | Path, category: str) -> NcFileInfo:
+    """读取文件元信息，并返回可用于排序和检查的结果。"""
     path = Path(file_path).expanduser().resolve()
     if not path.exists():
         raise FileNotFoundError(f"Input file does not exist: {path}")
@@ -114,6 +136,7 @@ def load_time_slice(
     time_index: int | None = None,
     timestamp: str | pd.Timestamp | None = None,
 ) -> SliceData:
+    """读取单个文件中的一个时间切片。"""
     path = Path(file_path).expanduser().resolve()
     if not path.exists():
         raise FileNotFoundError(f"Input file does not exist: {path}")
@@ -131,6 +154,7 @@ def load_time_slice(
 
 
 def iter_time_slices(file_path: str | Path, category: str) -> Iterator[SliceData]:
+    """按时间顺序迭代输出单个文件中的所有切片。"""
     path = Path(file_path).expanduser().resolve()
     if not path.exists():
         raise FileNotFoundError(f"Input file does not exist: {path}")
@@ -148,6 +172,7 @@ def iter_time_slices(file_path: str | Path, category: str) -> Iterator[SliceData
 
 
 def detect_dataset_schema(dataset: xr.Dataset, category: str) -> DatasetSchema:
+    """自动识别数据集中的关键变量与维度。"""
     time_name = _find_name(dataset.variables, TIME_CANDIDATES)
     if time_name is None:
         raise ValueError("Could not identify the time variable in the netCDF file.")
@@ -197,6 +222,7 @@ def detect_dataset_schema(dataset: xr.Dataset, category: str) -> DatasetSchema:
 
 
 def extract_times(dataset: xr.Dataset, time_name: str) -> tuple[pd.Timestamp, ...]:
+    """从时间变量中提取 UTC 时间戳元组。"""
     try:
         values = pd.to_datetime(dataset[time_name].values, utc=True)
     except Exception as exc:
@@ -205,6 +231,7 @@ def extract_times(dataset: xr.Dataset, time_name: str) -> tuple[pd.Timestamp, ..
     if isinstance(values, pd.Timestamp):
         values = pd.DatetimeIndex([values])
 
+    # 项目内部统一使用无时区但语义上为 UTC 的 Timestamp。
     return tuple(timestamp.tz_convert(None) for timestamp in values)
 
 
@@ -214,6 +241,7 @@ def resolve_time_index(
     time_index: int | None = None,
     timestamp: str | pd.Timestamp | None = None,
 ) -> int:
+    """根据显式时间戳或索引，决定要读取的切片位置。"""
     if not times:
         raise ValueError("No time values were found in the file.")
 
@@ -233,6 +261,7 @@ def resolve_time_index(
 
 
 def normalize_timestamp(value: str | pd.Timestamp) -> pd.Timestamp:
+    """把输入时间统一转换为项目内部使用的 UTC 无时区时间。"""
     timestamp = pd.to_datetime(value, utc=True)
     if isinstance(timestamp, pd.DatetimeIndex):
         if len(timestamp) != 1:
@@ -249,6 +278,7 @@ def build_slice(
     times: tuple[pd.Timestamp, ...],
     time_index: int,
 ) -> SliceData:
+    """把给定时间索引对应的三维数据切成二维切片。"""
     data_array = dataset[schema.data_name]
     selected = data_array.isel({schema.time_dim: time_index}).transpose(schema.lat_dim, schema.lon_dim)
 
@@ -276,6 +306,7 @@ def build_slice(
 
 
 def _find_name(available: dict[str, object], candidates: tuple[str, ...]) -> str | None:
+    """按候选名顺序查找变量真实名称。"""
     lowered = {name.lower(): name for name in available}
     for candidate in candidates:
         matched = lowered.get(candidate.lower())
@@ -285,6 +316,7 @@ def _find_name(available: dict[str, object], candidates: tuple[str, ...]) -> str
 
 
 def _single_dimension(dataset: xr.Dataset, variable_name: str, label: str) -> str:
+    """要求时间/纬度/经度变量必须只有一个维度。"""
     variable = dataset[variable_name]
     if len(variable.dims) != 1:
         raise ValueError(f"The {label} variable '{variable_name}' must be one-dimensional.")

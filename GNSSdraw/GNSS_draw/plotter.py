@@ -1,16 +1,19 @@
+"""GNSS 地图绘制模块。"""
+
 from __future__ import annotations
 
 from pathlib import Path
 
 import matplotlib
 
+# 仓库中的绘图任务主要跑在批处理环境，因此强制使用无界面的 Agg 后端。
 matplotlib.use("Agg")
 
 import cartopy.crs as ccrs
 import cartopy.feature as cfeature
+from matplotlib import font_manager
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib import font_manager
 
 from .config import MagneticEquatorConfig, StyleConfig
 from .preprocess import ProcessedSlice, format_title_timestamp
@@ -26,6 +29,7 @@ def plot_map(
     requested_font_family: str,
     magnetic_equator: MagneticEquatorConfig | None = None,
 ) -> None:
+    """把单个预处理切片绘制成地图并保存到磁盘。"""
     output_path.parent.mkdir(parents=True, exist_ok=True)
     font_family = resolve_font_family(requested_font_family)
 
@@ -71,12 +75,15 @@ def plot_map(
         gridlines.right_labels = False
 
         title_text = f"{processed.category} Map {format_title_timestamp(processed.timestamp)} UTC"
+        # 当前项目的图题放在图框下方中央，方便和地图主体分离。
         axis.text(
-            0.5, -0.02, title_text,
+            0.5,
+            -0.02,
+            title_text,
             transform=axis.transAxes,
             fontsize=14,
-            ha='center',
-            va='top',
+            ha="center",
+            va="top",
         )
 
         colorbar = figure.colorbar(mesh, ax=axis, shrink=1.0, aspect=30, pad=0.03)
@@ -88,6 +95,7 @@ def plot_map(
 
 
 def resolve_font_family(requested_font_family: str) -> str:
+    """根据本机已安装字体，为绘图选择一个最合适的衬线字体。"""
     available_fonts = {font.name for font in font_manager.fontManager.ttflist}
     for candidate in (
         requested_font_family,
@@ -102,6 +110,7 @@ def resolve_font_family(requested_font_family: str) -> str:
 
 
 def _build_colorbar_label(processed: ProcessedSlice) -> str:
+    """生成色标标题，若存在单位则一并展示。"""
     if processed.units:
         return f"{processed.category} ({processed.units})"
     return processed.category
@@ -114,23 +123,19 @@ def draw_magnetic_equator(
     color: str = "red",
     linewidth: float = 1.5,
 ) -> None:
-    """
-    在地图上绘制磁赤道线。
+    """在地图上绘制磁赤道线。
 
-    使用 apexpy 库计算磁赤道（磁纬度为0°的线）的地理位置。
-    磁赤道是电离层研究中重要的参考线，表示磁场方向水平的区域。
+    实现逻辑：
 
-    Args:
-        axis: matplotlib 的地图坐标轴对象
-        extent: 地图范围 (lon_min, lon_max, lat_min, lat_max)
-        timestamp: 时间戳，用于确定 IGRF 磁场模型系数
-        color: 磁赤道线的颜色，默认为红色
-        linewidth: 磁赤道线的宽度，默认为 1.5
+    1. 在给定经度范围上逐列搜索
+    2. 在当前图幅纬度范围内寻找磁纬由正变负或由负变正的位置
+    3. 一旦发现过零区间，再用二分法细化真实地理纬度
     """
     try:
         from apexpy import Apex
     except ImportError:
         import logging
+
         logging.warning("apexpy is not installed. Magnetic equator will not be drawn.")
         return
 
@@ -142,7 +147,7 @@ def draw_magnetic_equator(
     try:
         apex = Apex(date=timestamp)
     except Exception:
-        year = timestamp.year if hasattr(timestamp, 'year') else 2024
+        year = timestamp.year if hasattr(timestamp, "year") else 2024
         apex = Apex(date=year)
 
     mag_lats = []
@@ -155,18 +160,22 @@ def draw_magnetic_equator(
 
         for lat in search_lats:
             try:
-                mlat, _ = apex.convert(lat, lon, 'geo', 'apex', height=300)
+                mlat, _ = apex.convert(lat, lon, "geo", "apex", height=300)
                 mlat = float(mlat)
 
-                if prev_mlat is not None:
-                    if prev_mlat * mlat <= 0:
-                        eq_lat = _find_equator_latitude(
-                            apex, prev_lat, lat, prev_mlat, mlat, lon
-                        )
-                        if eq_lat is not None:
-                            mag_lats.append(eq_lat)
-                            mag_lons.append(lon)
-                        break
+                if prev_mlat is not None and prev_mlat * mlat <= 0:
+                    eq_lat = _find_equator_latitude(
+                        apex,
+                        prev_lat,
+                        lat,
+                        prev_mlat,
+                        mlat,
+                        lon,
+                    )
+                    if eq_lat is not None:
+                        mag_lats.append(eq_lat)
+                        mag_lons.append(lon)
+                    break
                 prev_mlat = mlat
                 prev_lat = lat
             except Exception:
@@ -185,20 +194,22 @@ def draw_magnetic_equator(
         mag_lats = mag_lats[mask]
 
         if len(mag_lons) > 1:
-            from scipy.interpolate import splprep, splev
+            # 若环境中没有 SciPy，则直接退回普通折线绘制。
             try:
-                tck, u = splprep([mag_lons, mag_lats], s=0, per=False)
+                from scipy.interpolate import splprep, splev
+
+                tck, _ = splprep([mag_lons, mag_lats], s=0, per=False)
                 u_new = np.linspace(0, 1, 1000)
                 smooth_lons, smooth_lats = splev(u_new, tck)
-                
+
                 axis.plot(
                     smooth_lons,
                     smooth_lats,
                     color=color,
                     linewidth=linewidth,
-                    linestyle='--',
+                    linestyle="--",
                     transform=ccrs.PlateCarree(),
-                    label='Magnetic Equator',
+                    label="Magnetic Equator",
                 )
             except Exception:
                 axis.plot(
@@ -206,9 +217,9 @@ def draw_magnetic_equator(
                     mag_lats,
                     color=color,
                     linewidth=linewidth,
-                    linestyle='--',
+                    linestyle="--",
                     transform=ccrs.PlateCarree(),
-                    label='Magnetic Equator',
+                    label="Magnetic Equator",
                 )
 
 
@@ -222,27 +233,12 @@ def _find_equator_latitude(
     tolerance: float = 0.001,
     max_iter: int = 20,
 ) -> float | None:
-    """
-    使用二分法精确找到磁赤道所在的地理纬度。
-
-    Args:
-        apex: Apex 对象
-        lat_low: 低纬度边界
-        lat_high: 高纬度边界
-        mlat_low: 低纬度对应的磁纬度
-        mlat_high: 高纬度对应的磁纬度
-        lon: 当前经度
-        tolerance: 纬度容差（度）
-        max_iter: 最大迭代次数
-
-    Returns:
-        磁赤道所在的地理纬度，如果未找到则返回 None
-    """
+    """在磁纬过零的区间内，用二分法细化磁赤道位置。"""
     for _ in range(max_iter):
         lat_mid = (lat_low + lat_high) / 2.0
-        
+
         try:
-            mlat_mid, _ = apex.convert(lat_mid, lon, 'geo', 'apex', height=300)
+            mlat_mid, _ = apex.convert(lat_mid, lon, "geo", "apex", height=300)
             mlat_mid = float(mlat_mid)
         except Exception:
             return None

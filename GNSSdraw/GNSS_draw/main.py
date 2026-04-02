@@ -1,3 +1,5 @@
+"""GNSS 绘图命令行入口。"""
+
 from __future__ import annotations
 
 import argparse
@@ -13,6 +15,7 @@ LOGGER = logging.getLogger(__name__)
 
 
 def build_parser() -> argparse.ArgumentParser:
+    """构建命令行解析器，仅暴露 `single` 和 `batch` 两种模式。"""
     parser = argparse.ArgumentParser(description="Plot GNSS ionospheric netCDF maps.")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
@@ -28,6 +31,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: Sequence[str] | None = None) -> int:
+    """解析 CLI 参数，加载配置，并执行对应导出流程。"""
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s | %(levelname)s | %(message)s",
@@ -38,6 +42,7 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     try:
         config = load_config(Path(args.config), args.command)
+        # 如果配置文件里也声明了模式，以命令行模式为准，并打印提示。
         if config.data.mode and config.data.mode != args.command:
             LOGGER.info(
                 "CLI mode '%s' overrides config data.mode '%s'.",

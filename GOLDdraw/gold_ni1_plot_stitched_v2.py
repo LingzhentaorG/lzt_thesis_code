@@ -1,5 +1,13 @@
 #!/usr/bin/env python
-"""Plot GOLD NI1 135.6 nm geolocated maps from CHA/CHB tar archives."""
+"""GOLD NI1 拼接制图脚本。
+
+该脚本在 `gold_ni1_map_1356.py` 的基础上进一步增强：
+
+- 允许直接读取部分截断的 tar 归档
+- 支持按原始条带拓扑拼接 (`native`)
+- 支持重采样到规则经纬度网格 (`grid`)
+- 适合生成更平滑、更接近正式论文图的单张地图
+"""
 
 from __future__ import annotations
 
@@ -33,6 +41,8 @@ FILE_PATTERN = re.compile(
 
 @dataclass(frozen=True)
 class ArchiveEntry:
+    """表示归档中的一个可读 GOLD NI1 成员。"""
+
     tar_path: Path
     member_name: str
     hemisphere: str
@@ -43,16 +53,20 @@ class ArchiveEntry:
 
 @dataclass(frozen=True)
 class PairMatch:
+    """表示一个成功匹配的 `CHA/CHB` 配对。"""
+
     cha: ArchiveEntry
     chb: ArchiveEntry
     delta: timedelta
 
     @property
     def midpoint(self) -> datetime:
+        """返回配对观测的时间中点。"""
         return self.cha.obs_time + (self.chb.obs_time - self.cha.obs_time) / 2
 
 
 def parse_args() -> argparse.Namespace:
+    """解析命令行参数。"""
     parser = argparse.ArgumentParser(
         description=(
             "Read GOLD NI1 CHA/CHB NetCDF files directly from .tar archives and "
@@ -170,6 +184,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def iter_tar_paths(raw_inputs: Iterable[str]) -> list[Path]:
+    """把输入参数展开成 tar 文件路径列表。"""
     tar_paths: list[Path] = []
     for raw in raw_inputs:
         path = Path(raw).expanduser().resolve()
@@ -192,6 +207,7 @@ def parse_entry(
     offset_data: int,
     size: int,
 ) -> ArchiveEntry | None:
+    """从文件名和 tar 偏移信息中构造归档成员对象。"""
     match = FILE_PATTERN.search(member_name)
     if not match:
         return None
@@ -208,6 +224,7 @@ def parse_entry(
 
 
 def discover_entries(tar_path: Path) -> list[ArchiveEntry]:
+    """扫描归档成员，并尽可能容忍截断的 tar 文件。"""
     entries: list[ArchiveEntry] = []
     truncated_archive = False
     with tarfile.open(tar_path) as archive:
@@ -234,6 +251,7 @@ def discover_entries(tar_path: Path) -> list[ArchiveEntry]:
 
 
 def match_pairs(entries: list[ArchiveEntry], max_delta_minutes: float) -> tuple[list[PairMatch], list[ArchiveEntry]]:
+    """按照时间差对 `CHA` 和 `CHB` 文件做贪心匹配。"""
     cha_entries = [entry for entry in entries if entry.hemisphere == "CHA"]
     chb_entries = [entry for entry in entries if entry.hemisphere == "CHB"]
     max_delta = timedelta(minutes=max_delta_minutes)
@@ -247,6 +265,7 @@ def match_pairs(entries: list[ArchiveEntry], max_delta_minutes: float) -> tuple[
             if delta <= max_delta:
                 candidates.append((delta, cha_index, chb_index))
 
+    # 先把候选组合按时间差从小到大排序，再做不重复使用的配对。
     candidates.sort(
         key=lambda item: (
             item[0],
@@ -287,6 +306,7 @@ def match_pairs(entries: list[ArchiveEntry], max_delta_minutes: float) -> tuple[
 
 
 def read_dataset_bytes(entry: ArchiveEntry) -> bytes:
+    """按 tar 中记录的偏移和大小直接读取 NetCDF 负载字节。"""
     with entry.tar_path.open("rb") as handle:
         handle.seek(entry.offset_data)
         dataset_bytes = handle.read(entry.size)
@@ -303,7 +323,7 @@ def read_geo_grid(
     target_nm: float,
     quality_mode: str,
 ) -> tuple[np.ndarray, np.ndarray, np.ma.MaskedArray]:
-    """Read one swath and keep its original 2D topology intact."""
+    """读取单个观测条带，并保留其原始二维拓扑结构。"""
     dataset_bytes = read_dataset_bytes(entry)
     with Dataset("inmemory.nc", memory=dataset_bytes) as dataset:
         latitude = np.ma.filled(dataset.variables["REFERENCE_POINT_LAT"][:], np.nan).astype(np.float64)
@@ -312,9 +332,11 @@ def read_geo_grid(
         radiance = np.ma.filled(dataset.variables["RADIANCE"][:], np.nan).astype(np.float64)
         quality_flag = np.ma.filled(dataset.variables["QUALITY_FLAG"][:], 0).astype(np.uint32)
 
+    # 对每个像元沿波长轴寻找最接近目标波长的位置。
     nearest_index = np.abs(wavelength - target_nm).argmin(axis=2)
     radiance_1356 = np.take_along_axis(radiance, nearest_index[..., None], axis=2)[..., 0]
 
+    # 先过滤掉无效坐标和无效辐亮度，再按质量标志做可选筛选。
     valid = np.isfinite(latitude) & np.isfinite(longitude) & np.isfinite(radiance_1356)
     valid &= (latitude >= -90.0) & (latitude <= 90.0)
     valid &= (longitude >= -180.0) & (longitude <= 180.0)
@@ -330,6 +352,7 @@ def read_geo_grid(
 
 
 def estimate_median_spacing(lon: np.ndarray, lat: np.ndarray) -> float:
+    """估计条带网格的中位间距，用于识别异常跨越的单元。"""
     finite = np.isfinite(lon) & np.isfinite(lat)
     dx = np.hypot(np.diff(lon, axis=1), np.diff(lat, axis=1))
     dy = np.hypot(np.diff(lon, axis=0), np.diff(lat, axis=0))
@@ -348,10 +371,10 @@ def estimate_median_spacing(lon: np.ndarray, lat: np.ndarray) -> float:
 
 
 def center_to_edges(center: np.ndarray) -> np.ndarray:
-    """Approximate cell corner coordinates from a curvilinear center grid.
+    """根据中心点近似恢复曲线网格的边界坐标。
 
-    Any edge/corner that depends on one or more invalid centers is kept as NaN so
-    the corresponding pcolormesh cell can be masked out later.
+    任何依赖无效中心点的边界都会保留为 `NaN`，
+    这样后续 `pcolormesh` 单元可以整体被屏蔽。
     """
     m, n = center.shape
     edge = np.full((m + 1, n + 1), np.nan, dtype=np.float64)
@@ -395,7 +418,7 @@ def build_cell_mask(
     lat_edge: np.ndarray,
     gap_factor: float,
 ) -> np.ndarray:
-    """Return an MxN mask for pcolormesh cells centered on the swath pixels."""
+    """为条带网格构造 `pcolormesh` 单元掩码。"""
     center_valid = np.isfinite(lon) & np.isfinite(lat) & ~np.ma.getmaskarray(data)
     edge_valid = np.isfinite(lon_edge) & np.isfinite(lat_edge)
 
@@ -407,6 +430,7 @@ def build_cell_mask(
         & edge_valid[1:, 1:]
     )
 
+    # 通过边长和对角线长度判断单元是否跨越了观测空洞。
     median_spacing = estimate_median_spacing(lon, lat)
     if np.isfinite(median_spacing) and median_spacing > 0:
         threshold = gap_factor * median_spacing
@@ -430,7 +454,7 @@ def build_cell_mask(
 
 
 def sanitize_edge_array(edge: np.ndarray, fallback: float) -> np.ndarray:
-    """Replace invalid edge coordinates after their cells have been masked out."""
+    """在单元已经被屏蔽后，用回退值填补无效边界坐标。"""
     clean = np.array(edge, copy=True)
     clean[~np.isfinite(clean)] = fallback
     return clean
@@ -447,7 +471,7 @@ def plot_swath(
     point_size: float,
     gap_factor: float,
 ):
-    """Plot one swath without connecting it to the other hemisphere."""
+    """绘制单个观测条带，避免两个半球数据被错误连成一片。"""
     if lon.ndim != 2 or lat.ndim != 2 or z.ndim != 2 or min(z.shape) < 2:
         finite = np.isfinite(lon) & np.isfinite(lat) & ~np.ma.getmaskarray(z)
         return ax.scatter(
@@ -514,6 +538,7 @@ def masked_to_points(
     lat: np.ndarray,
     z: np.ma.MaskedArray,
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """把掩码网格压平成点云，用于规则网格重采样。"""
     mask = np.isfinite(lon) & np.isfinite(lat) & ~np.ma.getmaskarray(z)
     values = np.asarray(z.filled(np.nan), dtype=np.float64)
     mask &= np.isfinite(values)
@@ -525,6 +550,7 @@ def merge_swaths_to_regular_grid(
     extent: tuple[float, float, float, float],
     grid_step: float,
 ) -> tuple[np.ndarray, np.ndarray, np.ma.MaskedArray] | None:
+    """把多个条带条目平均重采样到规则经纬度网格。"""
     west, east, south, north = extent
     if grid_step <= 0:
         raise ValueError("grid_step must be positive.")
@@ -551,6 +577,7 @@ def merge_swaths_to_regular_grid(
         yi = yi[keep]
         v = v[keep]
 
+        # 对落在同一规则网格单元的多个像元取平均。
         np.add.at(sum_grid, (yi, xi), v)
         np.add.at(count_grid, (yi, xi), 1)
 
@@ -576,6 +603,7 @@ def plot_merged_grid(
     vmin: float,
     vmax: float,
 ):
+    """绘制已经重采样到规则经纬度网格的结果。"""
     merged = merge_swaths_to_regular_grid(swaths, extent, grid_step)
     if merged is None:
         return None
@@ -595,6 +623,7 @@ def plot_merged_grid(
 
 
 def format_pair_title(pair: PairMatch) -> str:
+    """生成图题。"""
     midpoint = pair.midpoint.strftime("%Y-%m-%d %H:%MUT")
     if pair.cha.obs_time == pair.chb.obs_time:
         return midpoint
@@ -604,6 +633,7 @@ def format_pair_title(pair: PairMatch) -> str:
 
 
 def format_output_name(pair: PairMatch, target_nm: float) -> str:
+    """生成输出文件名。"""
     midpoint = pair.midpoint.strftime("%Y%m%dT%H%MZ")
     cha_label = pair.cha.obs_time.strftime("%H%M")
     chb_label = pair.chb.obs_time.strftime("%H%M")
@@ -612,6 +642,7 @@ def format_output_name(pair: PairMatch, target_nm: float) -> str:
 
 
 def add_map_background(ax: GeoAxes) -> None:
+    """为地图添加海洋、陆地、边界和经纬网背景。"""
     ax.set_facecolor("#b7d6e6")
     ax.add_feature(
         cfeature.OCEAN.with_scale("110m"),
@@ -653,6 +684,7 @@ def compute_magnetic_equator(
     timestamp: datetime,
     num_points: int = 721,
 ) -> tuple[np.ndarray, np.ndarray]:
+    """在给定时间和图幅范围内搜索磁赤道。"""
     west, east, south, north = extent
     lon_line = np.linspace(-180.0, 180.0, num_points)
 
@@ -712,6 +744,7 @@ def _find_equator_latitude(
     tolerance: float = 0.001,
     max_iter: int = 20,
 ) -> float | None:
+    """在磁纬过零区间内用二分法细化磁赤道纬度。"""
     for _ in range(max_iter):
         lat_mid = (lat_low + lat_high) / 2.0
 
@@ -739,6 +772,7 @@ def add_magnetic_equator(
     extent: tuple[float, float, float, float],
     timestamp: datetime,
 ) -> None:
+    """在地图上叠加磁赤道。"""
     lon_eq, lat_eq = compute_magnetic_equator(extent, timestamp)
     if len(lon_eq) > 1:
         ax.plot(
@@ -768,6 +802,7 @@ def plot_pair(
     vmax: float,
     dpi: int,
 ) -> None:
+    """把一个配对绘制成最终单图。"""
     cha_lon, cha_lat, cha_rad = read_geo_grid(pair.cha, target_nm, quality_mode)
     chb_lon, chb_lat, chb_rad = read_geo_grid(pair.chb, target_nm, quality_mode)
 
@@ -785,6 +820,7 @@ def plot_pair(
     add_map_background(geo_ax)
     geo_ax.set_extent(extent, crs=ccrs.PlateCarree())
 
+    # 两个半球条带统一放入列表，便于在不同拼接模式下复用。
     swaths = [(cha_lon, cha_lat, cha_rad), (chb_lon, chb_lat, chb_rad)]
 
     mesh = None
@@ -846,6 +882,7 @@ def process_archive(
     limit: int | None,
     verbose: bool,
 ) -> tuple[int, int]:
+    """处理单个 tar 归档并汇总输出结果。"""
     entries = discover_entries(tar_path)
     if not entries:
         print(f"[WARN] {tar_path.name}: no GOLD NI1 CHA/CHB files found.")
@@ -908,6 +945,7 @@ def process_archive(
 
 
 def main() -> int:
+    """脚本主入口。"""
     args = parse_args()
     if args.vmax <= args.vmin:
         raise ValueError("--vmax must be greater than --vmin.")

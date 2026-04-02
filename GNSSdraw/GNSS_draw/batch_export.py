@@ -1,3 +1,5 @@
+"""GNSS 单张导出与批量导出调度模块。"""
+
 from __future__ import annotations
 
 import logging
@@ -13,6 +15,7 @@ LOGGER = logging.getLogger(__name__)
 
 
 def export_single(config: AppConfig) -> Path:
+    """按配置导出单个文件中的一个时间切片。"""
     if config.data.file is None:
         raise ValueError("Single mode requires a file path in the config.")
 
@@ -34,6 +37,7 @@ def export_single(config: AppConfig) -> Path:
 
 
 def export_batch(config: AppConfig) -> list[Path]:
+    """批量扫描配置指定的数据目录，并导出全部可绘制切片。"""
     files: list[Path] = []
     years = config.data.years or (config.data.year,)
     for year in years:
@@ -46,6 +50,7 @@ def export_batch(config: AppConfig) -> list[Path]:
             )
         )
 
+    # 先做一次轻量检查并读取首时刻，便于全局排序。
     inspected_files: list[NcFileInfo] = []
     for file_path in files:
         try:
@@ -84,6 +89,7 @@ def export_batch(config: AppConfig) -> list[Path]:
 
 
 def render_slice(slice_data: SliceData, config: AppConfig, *, allow_skip: bool) -> Path | None:
+    """对单个时间切片完成预处理、绘图和落盘。"""
     LOGGER.info("Current processing time: %s UTC", format_title_timestamp(slice_data.timestamp))
 
     try:
@@ -94,6 +100,7 @@ def render_slice(slice_data: SliceData, config: AppConfig, *, allow_skip: bool) 
             lon_mode=config.plot.lon_mode,
         )
     except ValueError as exc:
+        # 批处理模式允许跳过空切片，单张模式则直接报错。
         if allow_skip:
             LOGGER.warning(
                 "Skipping %s at %s UTC: %s",
@@ -123,6 +130,7 @@ def render_slice(slice_data: SliceData, config: AppConfig, *, allow_skip: bool) 
 
 
 def build_output_path(config: AppConfig, slice_data: SliceData) -> Path:
+    """按照类别/年份/年积日组织输出路径。"""
     filename = (
         f"{slice_data.category}_"
         f"{format_filename_timestamp(slice_data.timestamp)}_"
