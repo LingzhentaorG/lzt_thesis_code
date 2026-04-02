@@ -34,12 +34,17 @@ def export_single(config: AppConfig) -> Path:
 
 
 def export_batch(config: AppConfig) -> list[Path]:
-    files = scan_nc_files(
-        config.data.root,
-        config.data.category,
-        config.data.year,
-        doys=config.data.doys,
-    )
+    files: list[Path] = []
+    years = config.data.years or (config.data.year,)
+    for year in years:
+        files.extend(
+            scan_nc_files(
+                config.data.root,
+                config.data.category,
+                year,
+                doys=config.data.doys,
+            )
+        )
 
     inspected_files: list[NcFileInfo] = []
     for file_path in files:

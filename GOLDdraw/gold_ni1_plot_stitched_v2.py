@@ -37,6 +37,8 @@ class ArchiveEntry:
     member_name: str
     hemisphere: str
     obs_time: datetime
+    offset_data: int
+    size: int
 
 
 @dataclass(frozen=True)
@@ -184,7 +186,12 @@ def iter_tar_paths(raw_inputs: Iterable[str]) -> list[Path]:
     return unique_paths
 
 
-def parse_entry(tar_path: Path, member_name: str) -> ArchiveEntry | None:
+def parse_entry(
+    tar_path: Path,
+    member_name: str,
+    offset_data: int,
+    size: int,
+) -> ArchiveEntry | None:
     match = FILE_PATTERN.search(member_name)
     if not match:
         return None
@@ -195,18 +202,34 @@ def parse_entry(tar_path: Path, member_name: str) -> ArchiveEntry | None:
         member_name=member_name,
         hemisphere=hemisphere,
         obs_time=obs_time,
+        offset_data=offset_data,
+        size=size,
     )
 
 
 def discover_entries(tar_path: Path) -> list[ArchiveEntry]:
     entries: list[ArchiveEntry] = []
+    truncated_archive = False
     with tarfile.open(tar_path) as archive:
-        for member in archive.getmembers():
+        while True:
+            try:
+                member = archive.next()
+            except tarfile.ReadError:
+                truncated_archive = True
+                break
+            if member is None:
+                break
             if not member.isfile():
                 continue
-            entry = parse_entry(tar_path, member.name)
+            entry = parse_entry(tar_path, member.name, member.offset_data, member.size)
             if entry is not None:
                 entries.append(entry)
+
+    if truncated_archive:
+        print(
+            f"[WARN] {tar_path.name}: tar archive ended early; "
+            f"using {len(entries)} readable members before the truncation point."
+        )
     return sorted(entries, key=lambda item: (item.obs_time, item.hemisphere, item.member_name))
 
 
@@ -263,21 +286,25 @@ def match_pairs(entries: list[ArchiveEntry], max_delta_minutes: float) -> tuple[
     return pairs, unmatched
 
 
-def read_dataset_bytes(archive: tarfile.TarFile, member_name: str) -> bytes:
-    extracted = archive.extractfile(member_name)
-    if extracted is None:
-        raise FileNotFoundError(f"Failed to read {member_name} from archive.")
-    return extracted.read()
+def read_dataset_bytes(entry: ArchiveEntry) -> bytes:
+    with entry.tar_path.open("rb") as handle:
+        handle.seek(entry.offset_data)
+        dataset_bytes = handle.read(entry.size)
+
+    if len(dataset_bytes) != entry.size:
+        raise tarfile.ReadError(
+            f"Failed to read the full payload for {entry.member_name} from {entry.tar_path.name}."
+        )
+    return dataset_bytes
 
 
 def read_geo_grid(
-    archive: tarfile.TarFile,
-    member_name: str,
+    entry: ArchiveEntry,
     target_nm: float,
     quality_mode: str,
 ) -> tuple[np.ndarray, np.ndarray, np.ma.MaskedArray]:
     """Read one swath and keep its original 2D topology intact."""
-    dataset_bytes = read_dataset_bytes(archive, member_name)
+    dataset_bytes = read_dataset_bytes(entry)
     with Dataset("inmemory.nc", memory=dataset_bytes) as dataset:
         latitude = np.ma.filled(dataset.variables["REFERENCE_POINT_LAT"][:], np.nan).astype(np.float64)
         longitude = np.ma.filled(dataset.variables["REFERENCE_POINT_LON"][:], np.nan).astype(np.float64)
@@ -622,35 +649,97 @@ def add_map_background(ax: GeoAxes) -> None:
 
 
 def compute_magnetic_equator(
-    apex: Apex,
     extent: tuple[float, float, float, float],
-    num_points: int = 500,
+    timestamp: datetime,
+    num_points: int = 721,
 ) -> tuple[np.ndarray, np.ndarray]:
     west, east, south, north = extent
-    lon_line = np.linspace(west, east, num_points)
-    lat_line = np.zeros_like(lon_line)
+    lon_line = np.linspace(-180.0, 180.0, num_points)
 
-    for i, lon_val in enumerate(lon_line):
-        lat_guess = 0.0
-        for _ in range(10):
-            mlat, _ = apex.geo2apex(lat_guess, lon_val, 0)
-            if np.isnan(mlat):
-                break
-            lat_guess = lat_guess - mlat
-            if abs(mlat) < 0.01:
-                break
-        lat_line[i] = np.clip(lat_guess, south, north)
+    try:
+        apex = Apex(date=timestamp)
+    except Exception:
+        apex = Apex(date=timestamp.year)
 
-    valid = np.isfinite(lat_line) & (lat_line >= south) & (lat_line <= north)
-    return lon_line[valid], lat_line[valid]
+    latitudes: list[float] = []
+    longitudes: list[float] = []
+    search_lats = np.linspace(south, north, 200)
+
+    for lon_val in lon_line:
+        prev_mlat = None
+        prev_lat = None
+
+        for lat_val in search_lats:
+            try:
+                mlat, _ = apex.convert(lat_val, lon_val, "geo", "apex", height=300)
+                mlat = float(mlat)
+            except Exception:
+                continue
+
+            if prev_mlat is not None and prev_lat is not None and prev_mlat * mlat <= 0:
+                equator_lat = _find_equator_latitude(
+                    apex,
+                    prev_lat,
+                    lat_val,
+                    prev_mlat,
+                    mlat,
+                    lon_val,
+                )
+                if equator_lat is not None:
+                    longitudes.append(float(lon_val))
+                    latitudes.append(equator_lat)
+                break
+
+            prev_mlat = mlat
+            prev_lat = lat_val
+
+    if not longitudes:
+        return np.array([]), np.array([])
+
+    lon_array = np.asarray(longitudes)
+    lat_array = np.asarray(latitudes)
+    mask = (lon_array >= west) & (lon_array <= east)
+    return lon_array[mask], lat_array[mask]
+
+
+def _find_equator_latitude(
+    apex: Apex,
+    lat_low: float,
+    lat_high: float,
+    mlat_low: float,
+    mlat_high: float,
+    lon: float,
+    tolerance: float = 0.001,
+    max_iter: int = 20,
+) -> float | None:
+    for _ in range(max_iter):
+        lat_mid = (lat_low + lat_high) / 2.0
+
+        try:
+            mlat_mid, _ = apex.convert(lat_mid, lon, "geo", "apex", height=300)
+            mlat_mid = float(mlat_mid)
+        except Exception:
+            return None
+
+        if abs(mlat_mid) < tolerance:
+            return lat_mid
+
+        if mlat_low * mlat_mid <= 0:
+            lat_high = lat_mid
+            mlat_high = mlat_mid
+        else:
+            lat_low = lat_mid
+            mlat_low = mlat_mid
+
+    return lat_mid
 
 
 def add_magnetic_equator(
     ax: GeoAxes,
-    apex: Apex,
     extent: tuple[float, float, float, float],
+    timestamp: datetime,
 ) -> None:
-    lon_eq, lat_eq = compute_magnetic_equator(apex, extent)
+    lon_eq, lat_eq = compute_magnetic_equator(extent, timestamp)
     if len(lon_eq) > 1:
         ax.plot(
             lon_eq,
@@ -666,7 +755,6 @@ def add_magnetic_equator(
 
 def plot_pair(
     pair: PairMatch,
-    archive: tarfile.TarFile,
     output_path: Path,
     target_nm: float,
     quality_mode: str,
@@ -679,10 +767,9 @@ def plot_pair(
     vmin: float,
     vmax: float,
     dpi: int,
-    apex: Apex,
 ) -> None:
-    cha_lon, cha_lat, cha_rad = read_geo_grid(archive, pair.cha.member_name, target_nm, quality_mode)
-    chb_lon, chb_lat, chb_rad = read_geo_grid(archive, pair.chb.member_name, target_nm, quality_mode)
+    cha_lon, cha_lat, cha_rad = read_geo_grid(pair.cha, target_nm, quality_mode)
+    chb_lon, chb_lat, chb_rad = read_geo_grid(pair.chb, target_nm, quality_mode)
 
     if cha_rad.count() == 0 and chb_rad.count() == 0:
         raise RuntimeError(
@@ -728,7 +815,7 @@ def plot_pair(
     if mesh is None:
         raise RuntimeError("No drawable pixels remained after merging.")
 
-    add_magnetic_equator(geo_ax, apex, extent)
+    add_magnetic_equator(geo_ax, extent, pair.midpoint)
 
     divider = make_axes_locatable(geo_ax)
     cax = divider.append_axes("right", size="3%", pad=0.1, axes_class=plt.Axes)
@@ -776,14 +863,13 @@ def process_archive(
     )
 
     written = 0
-    apex = Apex(date=2020.0)
-    with tarfile.open(tar_path) as archive:
-        for pair in pairs:
-            output_name = format_output_name(pair, target_nm)
-            output_path = tar_output_dir / output_name
+    skipped_pairs = 0
+    for pair in pairs:
+        output_name = format_output_name(pair, target_nm)
+        output_path = tar_output_dir / output_name
+        try:
             plot_pair(
                 pair=pair,
-                archive=archive,
                 output_path=output_path,
                 target_nm=target_nm,
                 quality_mode=quality_mode,
@@ -796,11 +882,17 @@ def process_archive(
                 vmin=vmin,
                 vmax=vmax,
                 dpi=dpi,
-                apex=apex,
             )
             written += 1
             if verbose:
                 print(f"[OK] {output_path}")
+        except (tarfile.ReadError, RuntimeError, OSError) as exc:
+            skipped_pairs += 1
+            print(
+                "[WARN] Skipping pair: "
+                f"{pair.midpoint:%Y-%m-%d %H:%MZ} "
+                f"({Path(pair.cha.member_name).name}, {Path(pair.chb.member_name).name}) - {exc}"
+            )
 
     for entry in unmatched[:10]:
         print(
@@ -809,6 +901,8 @@ def process_archive(
         )
     if len(unmatched) > 10:
         print(f"[WARN] ... {len(unmatched) - 10} more unmatched files not shown.")
+    if skipped_pairs > 0:
+        print(f"[WARN] Skipped {skipped_pairs} matched pairs due to unreadable payloads.")
 
     return written, len(unmatched)
 

@@ -93,6 +93,7 @@ class MagneticEquatorConfig:
 class DataConfig:
     root: Path
     year: str
+    years: tuple[str, ...] | None
     category: str
     mode: str | None
     file: Path | None
@@ -151,6 +152,7 @@ def load_config(config_path: str | Path, cli_mode: str) -> AppConfig:
     category = normalize_category(data_table.get("category", "VTEC"))
     declared_mode = _normalize_mode(data_table.get("mode")) if data_table.get("mode") else None
     year = str(data_table.get("year", "2024"))
+    years = _parse_years(data_table.get("years"))
     data_root = _resolve_path(data_table.get("root"), base_dir, default=base_dir / ".." / "Data_download")
     output_root = _resolve_path(output_table.get("root"), base_dir, default=base_dir / "outputs")
     file_path = _resolve_optional_file(data_table.get("file"), base_dir, data_root)
@@ -182,6 +184,7 @@ def load_config(config_path: str | Path, cli_mode: str) -> AppConfig:
         data=DataConfig(
             root=data_root,
             year=year,
+            years=years,
             category=category,
             mode=declared_mode,
             file=file_path,
@@ -299,6 +302,24 @@ def _parse_doys(value: Any) -> tuple[str, ...] | None:
     if not isinstance(value, list):
         raise ValueError("Config field data.doys must be an array.")
     return tuple(str(item).zfill(3) for item in value)
+
+
+def _parse_years(value: Any) -> tuple[str, ...] | None:
+    if value is None:
+        return None
+    if not isinstance(value, list):
+        raise ValueError("Config field data.years must be an array.")
+
+    years: list[str] = []
+    for item in value:
+        year = str(item).strip()
+        if not year:
+            raise ValueError("Config field data.years must not contain empty values.")
+        years.append(year)
+
+    if not years:
+        raise ValueError("Config field data.years must not be empty.")
+    return tuple(dict.fromkeys(years))
 
 
 def _parse_figure_size(value: Any) -> tuple[float, float]:
