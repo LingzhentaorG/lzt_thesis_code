@@ -1,0 +1,34 @@
+Traceback (most recent call last):
+  File "D:\Desktop\lzt_thesis_code\GOLDdraw\gold_ni1_plot_stitched_v2.py", line 952, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "D:\Desktop\lzt_thesis_code\GOLDdraw\gold_ni1_plot_stitched_v2.py", line 922, in main
+    written, unmatched = process_archive(
+                         ~~~~~~~~~~~~~~~^
+        tar_path=tar_path,
+        ^^^^^^^^^^^^^^^^^^
+    ...<14 lines>...
+        verbose=args.verbose,
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Desktop\lzt_thesis_code\GOLDdraw\gold_ni1_plot_stitched_v2.py", line 869, in process_archive
+    plot_pair(
+    ~~~~~~~~~^
+        pair=pair,
+        ^^^^^^^^^^
+    ...<11 lines>...
+        dpi=dpi,
+        ^^^^^^^^
+    )
+    ^
+  File "D:\Desktop\lzt_thesis_code\GOLDdraw\gold_ni1_plot_stitched_v2.py", line 771, in plot_pair
+    cha_lon, cha_lat, cha_rad = read_geo_grid(pair.cha, target_nm, quality_mode)
+                                ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desktop\lzt_thesis_code\GOLDdraw\gold_ni1_plot_stitched_v2.py", line 307, in read_geo_grid
+    dataset_bytes = read_dataset_bytes(entry)
+  File "D:\Desktop\lzt_thesis_code\GOLDdraw\gold_ni1_plot_stitched_v2.py", line 295, in read_dataset_bytes
+    raise tarfile.ReadError(
+        f"Failed to read the full payload for {entry.member_name} from {entry.tar_path.name}."
+    )
+tarfile.ReadError: Failed to read the full payload for tmp/archive_L1C/2025/001/GOLD_L1C_CHA_NI1_2025_001_23_52_v05_r01_c01.nc from NI2024123120250103.tar.

@@ -1,0 +1,13 @@
+[WARN] NI2024050820240514.tar: tar archive ended early; using 63 readable members before the truncation point.
+[INFO] NI2024050820240514.tar: found 63 files, matched 29 pairs, unmatched 5.
+[WARN] Unmatched file: CHA 2024-05-09 22:52 GOLD_L1C_CHA_NI1_2024_130_22_52_v05_r01_c01.nc
+[WARN] Unmatched file: CHA 2024-05-09 23:10 GOLD_L1C_CHA_NI1_2024_130_23_10_v05_r01_c01.nc
+[WARN] Unmatched file: CHA 2024-05-09 23:22 GOLD_L1C_CHA_NI1_2024_130_23_22_v05_r01_c01.nc
+[WARN] Unmatched file: CHA 2024-05-09 23:40 GOLD_L1C_CHA_NI1_2024_130_23_40_v05_r01_c01.nc
+[WARN] Unmatched file: CHA 2024-05-09 23:52 GOLD_L1C_CHA_NI1_2024_130_23_52_v05_r01_c01.nc
+[WARN] NI2024100820241014.tar: tar archive ended early; using 70 readable members before the truncation point.
+[INFO] NI2024100820241014.tar: found 70 files, matched 34 pairs, unmatched 2.
+[WARN] Unmatched file: CHA 2024-10-10 00:10 GOLD_L1C_CHA_NI1_2024_284_00_10_v05_r01_c01.nc
+[WARN] Unmatched file: CHA 2024-10-10 00:21 GOLD_L1C_CHA_NI1_2024_284_00_21_v05_r01_c01.nc
+[WARN] NI2024123120250103.tar: tar archive ended early; using 63 readable members before the truncation point.
+[INFO] NI2024123120250103.tar: found 63 files, matched 27 pairs, unmatched 9.

@@ -1,0 +1,9 @@
+COMMAND: ['C:\\Users\\Lingz\\AppData\\Local\\Miniconda3\\python.exe', 'D:\\Desktop\\lzt_thesis_code\\GOLDdraw\\gold_ni1_plot_stitched_v2.py', 'D:\\Desktop\\lzt_thesis_code\\GOLDdraw\\NI2024050820240514.tar', '--output-root', 'D:\\Desktop\\lzt_thesis_code\\GOLDdraw\\png_output']
+EXIT: 0
+
+STDOUT
+[INFO] NI2024050820240514.tar: found 252 files, matched 126 pairs, unmatched 0.
+[DONE] Wrote 126 PNG files to D:\Desktop\lzt_thesis_code\GOLDdraw\png_output. Total unmatched files: 0.
+
+
+STDERR

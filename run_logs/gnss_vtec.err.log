@@ -1,0 +1,1236 @@
+02:38:28 | INFO | Discovered 264 files and 3168 time slices for category VTEC.
+02:38:28 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\130\2024050900_atec.nc
+02:38:28 | INFO | Current processing time: 2024-05-09 00:00 UTC
+02:38:31 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0000Z_americas.png
+02:38:31 | INFO | Current processing time: 2024-05-09 00:05 UTC
+02:38:34 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0005Z_americas.png
+02:38:34 | INFO | Current processing time: 2024-05-09 00:10 UTC
+02:38:37 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0010Z_americas.png
+02:38:37 | INFO | Current processing time: 2024-05-09 00:15 UTC
+02:38:40 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0015Z_americas.png
+02:38:40 | INFO | Current processing time: 2024-05-09 00:20 UTC
+02:38:42 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0020Z_americas.png
+02:38:42 | INFO | Current processing time: 2024-05-09 00:25 UTC
+02:38:45 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0025Z_americas.png
+02:38:45 | INFO | Current processing time: 2024-05-09 00:30 UTC
+02:38:47 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0030Z_americas.png
+02:38:47 | INFO | Current processing time: 2024-05-09 00:35 UTC
+02:38:50 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0035Z_americas.png
+02:38:50 | INFO | Current processing time: 2024-05-09 00:40 UTC
+02:38:52 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0040Z_americas.png
+02:38:52 | INFO | Current processing time: 2024-05-09 00:45 UTC
+02:38:54 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0045Z_americas.png
+02:38:54 | INFO | Current processing time: 2024-05-09 00:50 UTC
+02:38:57 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0050Z_americas.png
+02:38:57 | INFO | Current processing time: 2024-05-09 00:55 UTC
+02:38:59 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0055Z_americas.png
+02:38:59 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\130\2024050901_atec.nc
+02:38:59 | INFO | Current processing time: 2024-05-09 01:00 UTC
+02:39:01 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0100Z_americas.png
+02:39:01 | INFO | Current processing time: 2024-05-09 01:05 UTC
+02:39:03 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0105Z_americas.png
+02:39:03 | INFO | Current processing time: 2024-05-09 01:10 UTC
+02:39:06 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0110Z_americas.png
+02:39:06 | INFO | Current processing time: 2024-05-09 01:15 UTC
+02:39:08 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0115Z_americas.png
+02:39:08 | INFO | Current processing time: 2024-05-09 01:20 UTC
+02:39:11 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0120Z_americas.png
+02:39:11 | INFO | Current processing time: 2024-05-09 01:25 UTC
+02:39:13 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0125Z_americas.png
+02:39:13 | INFO | Current processing time: 2024-05-09 01:30 UTC
+02:39:16 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0130Z_americas.png
+02:39:16 | INFO | Current processing time: 2024-05-09 01:35 UTC
+02:39:18 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0135Z_americas.png
+02:39:18 | INFO | Current processing time: 2024-05-09 01:40 UTC
+02:39:21 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0140Z_americas.png
+02:39:21 | INFO | Current processing time: 2024-05-09 01:45 UTC
+02:39:23 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0145Z_americas.png
+02:39:23 | INFO | Current processing time: 2024-05-09 01:50 UTC
+02:39:25 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0150Z_americas.png
+02:39:25 | INFO | Current processing time: 2024-05-09 01:55 UTC
+02:39:27 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0155Z_americas.png
+02:39:27 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\130\2024050902_atec.nc
+02:39:28 | INFO | Current processing time: 2024-05-09 02:00 UTC
+02:39:30 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0200Z_americas.png
+02:39:30 | INFO | Current processing time: 2024-05-09 02:05 UTC
+02:39:32 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0205Z_americas.png
+02:39:32 | INFO | Current processing time: 2024-05-09 02:10 UTC
+02:39:34 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0210Z_americas.png
+02:39:34 | INFO | Current processing time: 2024-05-09 02:15 UTC
+02:39:36 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0215Z_americas.png
+02:39:36 | INFO | Current processing time: 2024-05-09 02:20 UTC
+02:39:38 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0220Z_americas.png
+02:39:38 | INFO | Current processing time: 2024-05-09 02:25 UTC
+02:39:41 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0225Z_americas.png
+02:39:41 | INFO | Current processing time: 2024-05-09 02:30 UTC
+02:39:43 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0230Z_americas.png
+02:39:43 | INFO | Current processing time: 2024-05-09 02:35 UTC
+02:39:45 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0235Z_americas.png
+02:39:45 | INFO | Current processing time: 2024-05-09 02:40 UTC
+02:39:47 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0240Z_americas.png
+02:39:47 | INFO | Current processing time: 2024-05-09 02:45 UTC
+02:39:50 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0245Z_americas.png
+02:39:50 | INFO | Current processing time: 2024-05-09 02:50 UTC
+02:39:52 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0250Z_americas.png
+02:39:52 | INFO | Current processing time: 2024-05-09 02:55 UTC
+02:39:54 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0255Z_americas.png
+02:39:54 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\130\2024050903_atec.nc
+02:39:54 | INFO | Current processing time: 2024-05-09 03:00 UTC
+02:39:56 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0300Z_americas.png
+02:39:56 | INFO | Current processing time: 2024-05-09 03:05 UTC
+02:39:58 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0305Z_americas.png
+02:39:59 | INFO | Current processing time: 2024-05-09 03:10 UTC
+02:40:01 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0310Z_americas.png
+02:40:01 | INFO | Current processing time: 2024-05-09 03:15 UTC
+02:40:03 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0315Z_americas.png
+02:40:03 | INFO | Current processing time: 2024-05-09 03:20 UTC
+02:40:05 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0320Z_americas.png
+02:40:05 | INFO | Current processing time: 2024-05-09 03:25 UTC
+02:40:07 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0325Z_americas.png
+02:40:07 | INFO | Current processing time: 2024-05-09 03:30 UTC
+02:40:10 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0330Z_americas.png
+02:40:10 | INFO | Current processing time: 2024-05-09 03:35 UTC
+02:40:12 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0335Z_americas.png
+02:40:12 | INFO | Current processing time: 2024-05-09 03:40 UTC
+02:40:14 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0340Z_americas.png
+02:40:14 | INFO | Current processing time: 2024-05-09 03:45 UTC
+02:40:16 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0345Z_americas.png
+02:40:16 | INFO | Current processing time: 2024-05-09 03:50 UTC
+02:40:19 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0350Z_americas.png
+02:40:19 | INFO | Current processing time: 2024-05-09 03:55 UTC
+02:40:21 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0355Z_americas.png
+02:40:21 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\130\2024050904_atec.nc
+02:40:21 | INFO | Current processing time: 2024-05-09 04:00 UTC
+02:40:23 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0400Z_americas.png
+02:40:23 | INFO | Current processing time: 2024-05-09 04:05 UTC
+02:40:26 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0405Z_americas.png
+02:40:26 | INFO | Current processing time: 2024-05-09 04:10 UTC
+02:40:28 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0410Z_americas.png
+02:40:28 | INFO | Current processing time: 2024-05-09 04:15 UTC
+02:40:31 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0415Z_americas.png
+02:40:31 | INFO | Current processing time: 2024-05-09 04:20 UTC
+02:40:33 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0420Z_americas.png
+02:40:33 | INFO | Current processing time: 2024-05-09 04:25 UTC
+02:40:36 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0425Z_americas.png
+02:40:36 | INFO | Current processing time: 2024-05-09 04:30 UTC
+02:40:39 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0430Z_americas.png
+02:40:39 | INFO | Current processing time: 2024-05-09 04:35 UTC
+02:40:43 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0435Z_americas.png
+02:40:43 | INFO | Current processing time: 2024-05-09 04:40 UTC
+02:40:46 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0440Z_americas.png
+02:40:46 | INFO | Current processing time: 2024-05-09 04:45 UTC
+02:40:48 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0445Z_americas.png
+02:40:48 | INFO | Current processing time: 2024-05-09 04:50 UTC
+02:40:51 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0450Z_americas.png
+02:40:51 | INFO | Current processing time: 2024-05-09 04:55 UTC
+02:40:54 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0455Z_americas.png
+02:40:54 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\130\2024050905_atec.nc
+02:40:54 | INFO | Current processing time: 2024-05-09 05:00 UTC
+02:40:56 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0500Z_americas.png
+02:40:56 | INFO | Current processing time: 2024-05-09 05:05 UTC
+02:40:58 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0505Z_americas.png
+02:40:58 | INFO | Current processing time: 2024-05-09 05:10 UTC
+02:41:01 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0510Z_americas.png
+02:41:01 | INFO | Current processing time: 2024-05-09 05:15 UTC
+02:41:03 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0515Z_americas.png
+02:41:03 | INFO | Current processing time: 2024-05-09 05:20 UTC
+02:41:06 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0520Z_americas.png
+02:41:06 | INFO | Current processing time: 2024-05-09 05:25 UTC
+02:41:08 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0525Z_americas.png
+02:41:08 | INFO | Current processing time: 2024-05-09 05:30 UTC
+02:41:10 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0530Z_americas.png
+02:41:10 | INFO | Current processing time: 2024-05-09 05:35 UTC
+02:41:13 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0535Z_americas.png
+02:41:13 | INFO | Current processing time: 2024-05-09 05:40 UTC
+02:41:15 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0540Z_americas.png
+02:41:15 | INFO | Current processing time: 2024-05-09 05:45 UTC
+02:41:18 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0545Z_americas.png
+02:41:18 | INFO | Current processing time: 2024-05-09 05:50 UTC
+02:41:20 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0550Z_americas.png
+02:41:20 | INFO | Current processing time: 2024-05-09 05:55 UTC
+02:41:22 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0555Z_americas.png
+02:41:22 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\130\2024050906_atec.nc
+02:41:22 | INFO | Current processing time: 2024-05-09 06:00 UTC
+02:41:25 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0600Z_americas.png
+02:41:25 | INFO | Current processing time: 2024-05-09 06:05 UTC
+02:41:27 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0605Z_americas.png
+02:41:27 | INFO | Current processing time: 2024-05-09 06:10 UTC
+02:41:29 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0610Z_americas.png
+02:41:29 | INFO | Current processing time: 2024-05-09 06:15 UTC
+02:41:32 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0615Z_americas.png
+02:41:32 | INFO | Current processing time: 2024-05-09 06:20 UTC
+02:41:34 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0620Z_americas.png
+02:41:34 | INFO | Current processing time: 2024-05-09 06:25 UTC
+02:41:37 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0625Z_americas.png
+02:41:37 | INFO | Current processing time: 2024-05-09 06:30 UTC
+02:41:39 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0630Z_americas.png
+02:41:39 | INFO | Current processing time: 2024-05-09 06:35 UTC
+02:41:42 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0635Z_americas.png
+02:41:42 | INFO | Current processing time: 2024-05-09 06:40 UTC
+02:41:44 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0640Z_americas.png
+02:41:44 | INFO | Current processing time: 2024-05-09 06:45 UTC
+02:41:47 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0645Z_americas.png
+02:41:47 | INFO | Current processing time: 2024-05-09 06:50 UTC
+02:41:50 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0650Z_americas.png
+02:41:50 | INFO | Current processing time: 2024-05-09 06:55 UTC
+02:41:52 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0655Z_americas.png
+02:41:52 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\130\2024050907_atec.nc
+02:41:52 | INFO | Current processing time: 2024-05-09 07:00 UTC
+02:41:54 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0700Z_americas.png
+02:41:54 | INFO | Current processing time: 2024-05-09 07:05 UTC
+02:41:57 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0705Z_americas.png
+02:41:57 | INFO | Current processing time: 2024-05-09 07:10 UTC
+02:41:59 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0710Z_americas.png
+02:41:59 | INFO | Current processing time: 2024-05-09 07:15 UTC
+02:42:01 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0715Z_americas.png
+02:42:01 | INFO | Current processing time: 2024-05-09 07:20 UTC
+02:42:03 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0720Z_americas.png
+02:42:03 | INFO | Current processing time: 2024-05-09 07:25 UTC
+02:42:06 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0725Z_americas.png
+02:42:06 | INFO | Current processing time: 2024-05-09 07:30 UTC
+02:42:08 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0730Z_americas.png
+02:42:08 | INFO | Current processing time: 2024-05-09 07:35 UTC
+02:42:10 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0735Z_americas.png
+02:42:10 | INFO | Current processing time: 2024-05-09 07:40 UTC
+02:42:13 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0740Z_americas.png
+02:42:13 | INFO | Current processing time: 2024-05-09 07:45 UTC
+02:42:16 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0745Z_americas.png
+02:42:16 | INFO | Current processing time: 2024-05-09 07:50 UTC
+02:42:18 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0750Z_americas.png
+02:42:18 | INFO | Current processing time: 2024-05-09 07:55 UTC
+02:42:21 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0755Z_americas.png
+02:42:21 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\130\2024050908_atec.nc
+02:42:21 | INFO | Current processing time: 2024-05-09 08:00 UTC
+02:42:23 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0800Z_americas.png
+02:42:23 | INFO | Current processing time: 2024-05-09 08:05 UTC
+02:42:25 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0805Z_americas.png
+02:42:25 | INFO | Current processing time: 2024-05-09 08:10 UTC
+02:42:28 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0810Z_americas.png
+02:42:28 | INFO | Current processing time: 2024-05-09 08:15 UTC
+02:42:32 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0815Z_americas.png
+02:42:32 | INFO | Current processing time: 2024-05-09 08:20 UTC
+02:42:34 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0820Z_americas.png
+02:42:34 | INFO | Current processing time: 2024-05-09 08:25 UTC
+02:42:37 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0825Z_americas.png
+02:42:37 | INFO | Current processing time: 2024-05-09 08:30 UTC
+02:42:39 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0830Z_americas.png
+02:42:39 | INFO | Current processing time: 2024-05-09 08:35 UTC
+02:42:41 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0835Z_americas.png
+02:42:41 | INFO | Current processing time: 2024-05-09 08:40 UTC
+02:42:44 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0840Z_americas.png
+02:42:44 | INFO | Current processing time: 2024-05-09 08:45 UTC
+02:42:46 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0845Z_americas.png
+02:42:46 | INFO | Current processing time: 2024-05-09 08:50 UTC
+02:42:49 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0850Z_americas.png
+02:42:49 | INFO | Current processing time: 2024-05-09 08:55 UTC
+02:42:51 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0855Z_americas.png
+02:42:51 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\130\2024050909_atec.nc
+02:42:51 | INFO | Current processing time: 2024-05-09 09:00 UTC
+02:42:54 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0900Z_americas.png
+02:42:54 | INFO | Current processing time: 2024-05-09 09:05 UTC
+02:42:57 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0905Z_americas.png
+02:42:57 | INFO | Current processing time: 2024-05-09 09:10 UTC
+02:42:59 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0910Z_americas.png
+02:42:59 | INFO | Current processing time: 2024-05-09 09:15 UTC
+02:43:01 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0915Z_americas.png
+02:43:01 | INFO | Current processing time: 2024-05-09 09:20 UTC
+02:43:04 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0920Z_americas.png
+02:43:04 | INFO | Current processing time: 2024-05-09 09:25 UTC
+02:43:06 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0925Z_americas.png
+02:43:06 | INFO | Current processing time: 2024-05-09 09:30 UTC
+02:43:09 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0930Z_americas.png
+02:43:09 | INFO | Current processing time: 2024-05-09 09:35 UTC
+02:43:11 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0935Z_americas.png
+02:43:11 | INFO | Current processing time: 2024-05-09 09:40 UTC
+02:43:13 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0940Z_americas.png
+02:43:13 | INFO | Current processing time: 2024-05-09 09:45 UTC
+02:43:16 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0945Z_americas.png
+02:43:16 | INFO | Current processing time: 2024-05-09 09:50 UTC
+02:43:18 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0950Z_americas.png
+02:43:18 | INFO | Current processing time: 2024-05-09 09:55 UTC
+02:43:20 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T0955Z_americas.png
+02:43:20 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\130\2024050910_atec.nc
+02:43:20 | INFO | Current processing time: 2024-05-09 10:00 UTC
+02:43:23 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1000Z_americas.png
+02:43:23 | INFO | Current processing time: 2024-05-09 10:05 UTC
+02:43:26 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1005Z_americas.png
+02:43:26 | INFO | Current processing time: 2024-05-09 10:10 UTC
+02:43:28 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1010Z_americas.png
+02:43:28 | INFO | Current processing time: 2024-05-09 10:15 UTC
+02:43:31 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1015Z_americas.png
+02:43:31 | INFO | Current processing time: 2024-05-09 10:20 UTC
+02:43:34 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1020Z_americas.png
+02:43:34 | INFO | Current processing time: 2024-05-09 10:25 UTC
+02:43:37 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1025Z_americas.png
+02:43:37 | INFO | Current processing time: 2024-05-09 10:30 UTC
+02:43:39 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1030Z_americas.png
+02:43:39 | INFO | Current processing time: 2024-05-09 10:35 UTC
+02:43:42 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1035Z_americas.png
+02:43:42 | INFO | Current processing time: 2024-05-09 10:40 UTC
+02:43:44 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1040Z_americas.png
+02:43:44 | INFO | Current processing time: 2024-05-09 10:45 UTC
+02:43:47 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1045Z_americas.png
+02:43:47 | INFO | Current processing time: 2024-05-09 10:50 UTC
+02:43:50 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1050Z_americas.png
+02:43:50 | INFO | Current processing time: 2024-05-09 10:55 UTC
+02:43:52 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1055Z_americas.png
+02:43:52 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\130\2024050911_atec.nc
+02:43:52 | INFO | Current processing time: 2024-05-09 11:00 UTC
+02:43:55 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1100Z_americas.png
+02:43:55 | INFO | Current processing time: 2024-05-09 11:05 UTC
+02:43:57 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1105Z_americas.png
+02:43:57 | INFO | Current processing time: 2024-05-09 11:10 UTC
+02:43:59 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1110Z_americas.png
+02:43:59 | INFO | Current processing time: 2024-05-09 11:15 UTC
+02:44:02 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1115Z_americas.png
+02:44:02 | INFO | Current processing time: 2024-05-09 11:20 UTC
+02:44:04 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1120Z_americas.png
+02:44:04 | INFO | Current processing time: 2024-05-09 11:25 UTC
+02:44:06 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1125Z_americas.png
+02:44:06 | INFO | Current processing time: 2024-05-09 11:30 UTC
+02:44:09 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1130Z_americas.png
+02:44:09 | INFO | Current processing time: 2024-05-09 11:35 UTC
+02:44:12 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1135Z_americas.png
+02:44:12 | INFO | Current processing time: 2024-05-09 11:40 UTC
+02:44:15 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1140Z_americas.png
+02:44:15 | INFO | Current processing time: 2024-05-09 11:45 UTC
+02:44:17 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1145Z_americas.png
+02:44:17 | INFO | Current processing time: 2024-05-09 11:50 UTC
+02:44:20 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1150Z_americas.png
+02:44:20 | INFO | Current processing time: 2024-05-09 11:55 UTC
+02:44:22 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1155Z_americas.png
+02:44:22 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\130\2024050912_atec.nc
+02:44:22 | INFO | Current processing time: 2024-05-09 12:00 UTC
+02:44:24 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1200Z_americas.png
+02:44:24 | INFO | Current processing time: 2024-05-09 12:05 UTC
+02:44:27 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1205Z_americas.png
+02:44:27 | INFO | Current processing time: 2024-05-09 12:10 UTC
+02:44:29 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1210Z_americas.png
+02:44:29 | INFO | Current processing time: 2024-05-09 12:15 UTC
+02:44:31 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1215Z_americas.png
+02:44:31 | INFO | Current processing time: 2024-05-09 12:20 UTC
+02:44:33 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1220Z_americas.png
+02:44:33 | INFO | Current processing time: 2024-05-09 12:25 UTC
+02:44:36 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1225Z_americas.png
+02:44:36 | INFO | Current processing time: 2024-05-09 12:30 UTC
+02:44:38 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1230Z_americas.png
+02:44:38 | INFO | Current processing time: 2024-05-09 12:35 UTC
+02:44:40 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1235Z_americas.png
+02:44:40 | INFO | Current processing time: 2024-05-09 12:40 UTC
+02:44:43 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1240Z_americas.png
+02:44:43 | INFO | Current processing time: 2024-05-09 12:45 UTC
+02:44:45 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1245Z_americas.png
+02:44:45 | INFO | Current processing time: 2024-05-09 12:50 UTC
+02:44:47 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1250Z_americas.png
+02:44:48 | INFO | Current processing time: 2024-05-09 12:55 UTC
+02:44:50 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1255Z_americas.png
+02:44:50 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\130\2024050913_atec.nc
+02:44:50 | INFO | Current processing time: 2024-05-09 13:00 UTC
+02:44:52 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1300Z_americas.png
+02:44:52 | INFO | Current processing time: 2024-05-09 13:05 UTC
+02:44:54 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1305Z_americas.png
+02:44:54 | INFO | Current processing time: 2024-05-09 13:10 UTC
+02:44:57 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1310Z_americas.png
+02:44:57 | INFO | Current processing time: 2024-05-09 13:15 UTC
+02:44:59 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1315Z_americas.png
+02:44:59 | INFO | Current processing time: 2024-05-09 13:20 UTC
+02:45:01 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1320Z_americas.png
+02:45:01 | INFO | Current processing time: 2024-05-09 13:25 UTC
+02:45:04 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1325Z_americas.png
+02:45:04 | INFO | Current processing time: 2024-05-09 13:30 UTC
+02:45:06 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1330Z_americas.png
+02:45:06 | INFO | Current processing time: 2024-05-09 13:35 UTC
+02:45:09 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1335Z_americas.png
+02:45:09 | INFO | Current processing time: 2024-05-09 13:40 UTC
+02:45:11 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1340Z_americas.png
+02:45:11 | INFO | Current processing time: 2024-05-09 13:45 UTC
+02:45:13 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1345Z_americas.png
+02:45:13 | INFO | Current processing time: 2024-05-09 13:50 UTC
+02:45:16 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1350Z_americas.png
+02:45:16 | INFO | Current processing time: 2024-05-09 13:55 UTC
+02:45:18 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1355Z_americas.png
+02:45:18 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\130\2024050914_atec.nc
+02:45:18 | INFO | Current processing time: 2024-05-09 14:00 UTC
+02:45:20 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1400Z_americas.png
+02:45:20 | INFO | Current processing time: 2024-05-09 14:05 UTC
+02:45:22 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1405Z_americas.png
+02:45:22 | INFO | Current processing time: 2024-05-09 14:10 UTC
+02:45:25 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1410Z_americas.png
+02:45:25 | INFO | Current processing time: 2024-05-09 14:15 UTC
+02:45:27 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1415Z_americas.png
+02:45:27 | INFO | Current processing time: 2024-05-09 14:20 UTC
+02:45:29 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1420Z_americas.png
+02:45:29 | INFO | Current processing time: 2024-05-09 14:25 UTC
+02:45:32 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1425Z_americas.png
+02:45:32 | INFO | Current processing time: 2024-05-09 14:30 UTC
+02:45:35 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1430Z_americas.png
+02:45:35 | INFO | Current processing time: 2024-05-09 14:35 UTC
+02:45:37 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1435Z_americas.png
+02:45:37 | INFO | Current processing time: 2024-05-09 14:40 UTC
+02:45:40 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1440Z_americas.png
+02:45:40 | INFO | Current processing time: 2024-05-09 14:45 UTC
+02:45:42 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1445Z_americas.png
+02:45:42 | INFO | Current processing time: 2024-05-09 14:50 UTC
+02:45:44 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1450Z_americas.png
+02:45:44 | INFO | Current processing time: 2024-05-09 14:55 UTC
+02:45:47 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1455Z_americas.png
+02:45:47 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\130\2024050915_atec.nc
+02:45:47 | INFO | Current processing time: 2024-05-09 15:00 UTC
+02:45:49 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1500Z_americas.png
+02:45:49 | INFO | Current processing time: 2024-05-09 15:05 UTC
+02:45:51 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1505Z_americas.png
+02:45:52 | INFO | Current processing time: 2024-05-09 15:10 UTC
+02:45:54 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1510Z_americas.png
+02:45:54 | INFO | Current processing time: 2024-05-09 15:15 UTC
+02:45:56 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1515Z_americas.png
+02:45:56 | INFO | Current processing time: 2024-05-09 15:20 UTC
+02:45:59 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1520Z_americas.png
+02:45:59 | INFO | Current processing time: 2024-05-09 15:25 UTC
+02:46:01 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1525Z_americas.png
+02:46:01 | INFO | Current processing time: 2024-05-09 15:30 UTC
+02:46:04 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1530Z_americas.png
+02:46:04 | INFO | Current processing time: 2024-05-09 15:35 UTC
+02:46:06 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1535Z_americas.png
+02:46:06 | INFO | Current processing time: 2024-05-09 15:40 UTC
+02:46:09 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1540Z_americas.png
+02:46:09 | INFO | Current processing time: 2024-05-09 15:45 UTC
+02:46:11 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1545Z_americas.png
+02:46:11 | INFO | Current processing time: 2024-05-09 15:50 UTC
+02:46:13 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1550Z_americas.png
+02:46:13 | INFO | Current processing time: 2024-05-09 15:55 UTC
+02:46:16 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1555Z_americas.png
+02:46:16 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\130\2024050916_atec.nc
+02:46:16 | INFO | Current processing time: 2024-05-09 16:00 UTC
+02:46:18 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1600Z_americas.png
+02:46:18 | INFO | Current processing time: 2024-05-09 16:05 UTC
+02:46:20 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1605Z_americas.png
+02:46:20 | INFO | Current processing time: 2024-05-09 16:10 UTC
+02:46:23 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1610Z_americas.png
+02:46:23 | INFO | Current processing time: 2024-05-09 16:15 UTC
+02:46:25 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1615Z_americas.png
+02:46:25 | INFO | Current processing time: 2024-05-09 16:20 UTC
+02:46:28 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1620Z_americas.png
+02:46:28 | INFO | Current processing time: 2024-05-09 16:25 UTC
+02:46:30 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1625Z_americas.png
+02:46:30 | INFO | Current processing time: 2024-05-09 16:30 UTC
+02:46:32 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1630Z_americas.png
+02:46:32 | INFO | Current processing time: 2024-05-09 16:35 UTC
+02:46:35 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1635Z_americas.png
+02:46:35 | INFO | Current processing time: 2024-05-09 16:40 UTC
+02:46:38 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1640Z_americas.png
+02:46:38 | INFO | Current processing time: 2024-05-09 16:45 UTC
+02:46:40 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1645Z_americas.png
+02:46:40 | INFO | Current processing time: 2024-05-09 16:50 UTC
+02:46:43 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1650Z_americas.png
+02:46:43 | INFO | Current processing time: 2024-05-09 16:55 UTC
+02:46:46 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1655Z_americas.png
+02:46:46 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\130\2024050917_atec.nc
+02:46:46 | INFO | Current processing time: 2024-05-09 17:00 UTC
+02:46:48 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1700Z_americas.png
+02:46:48 | INFO | Current processing time: 2024-05-09 17:05 UTC
+02:46:51 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1705Z_americas.png
+02:46:51 | INFO | Current processing time: 2024-05-09 17:10 UTC
+02:46:54 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1710Z_americas.png
+02:46:54 | INFO | Current processing time: 2024-05-09 17:15 UTC
+02:46:57 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1715Z_americas.png
+02:46:57 | INFO | Current processing time: 2024-05-09 17:20 UTC
+02:46:59 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1720Z_americas.png
+02:46:59 | INFO | Current processing time: 2024-05-09 17:25 UTC
+02:47:01 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1725Z_americas.png
+02:47:01 | INFO | Current processing time: 2024-05-09 17:30 UTC
+02:47:04 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1730Z_americas.png
+02:47:04 | INFO | Current processing time: 2024-05-09 17:35 UTC
+02:47:06 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1735Z_americas.png
+02:47:06 | INFO | Current processing time: 2024-05-09 17:40 UTC
+02:47:09 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1740Z_americas.png
+02:47:09 | INFO | Current processing time: 2024-05-09 17:45 UTC
+02:47:12 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1745Z_americas.png
+02:47:12 | INFO | Current processing time: 2024-05-09 17:50 UTC
+02:47:14 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1750Z_americas.png
+02:47:14 | INFO | Current processing time: 2024-05-09 17:55 UTC
+02:47:17 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1755Z_americas.png
+02:47:17 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\130\2024050918_atec.nc
+02:47:17 | INFO | Current processing time: 2024-05-09 18:00 UTC
+02:47:19 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1800Z_americas.png
+02:47:19 | INFO | Current processing time: 2024-05-09 18:05 UTC
+02:47:22 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1805Z_americas.png
+02:47:22 | INFO | Current processing time: 2024-05-09 18:10 UTC
+02:47:24 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1810Z_americas.png
+02:47:24 | INFO | Current processing time: 2024-05-09 18:15 UTC
+02:47:26 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1815Z_americas.png
+02:47:26 | INFO | Current processing time: 2024-05-09 18:20 UTC
+02:47:29 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1820Z_americas.png
+02:47:29 | INFO | Current processing time: 2024-05-09 18:25 UTC
+02:47:31 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1825Z_americas.png
+02:47:31 | INFO | Current processing time: 2024-05-09 18:30 UTC
+02:47:33 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1830Z_americas.png
+02:47:33 | INFO | Current processing time: 2024-05-09 18:35 UTC
+02:47:36 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1835Z_americas.png
+02:47:36 | INFO | Current processing time: 2024-05-09 18:40 UTC
+02:47:38 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1840Z_americas.png
+02:47:38 | INFO | Current processing time: 2024-05-09 18:45 UTC
+02:47:40 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1845Z_americas.png
+02:47:40 | INFO | Current processing time: 2024-05-09 18:50 UTC
+02:47:43 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1850Z_americas.png
+02:47:43 | INFO | Current processing time: 2024-05-09 18:55 UTC
+02:47:45 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1855Z_americas.png
+02:47:45 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\130\2024050919_atec.nc
+02:47:45 | INFO | Current processing time: 2024-05-09 19:00 UTC
+02:47:48 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1900Z_americas.png
+02:47:48 | INFO | Current processing time: 2024-05-09 19:05 UTC
+02:47:50 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1905Z_americas.png
+02:47:50 | INFO | Current processing time: 2024-05-09 19:10 UTC
+02:47:52 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1910Z_americas.png
+02:47:52 | INFO | Current processing time: 2024-05-09 19:15 UTC
+02:47:55 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1915Z_americas.png
+02:47:55 | INFO | Current processing time: 2024-05-09 19:20 UTC
+02:47:57 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1920Z_americas.png
+02:47:57 | INFO | Current processing time: 2024-05-09 19:25 UTC
+02:47:59 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1925Z_americas.png
+02:47:59 | INFO | Current processing time: 2024-05-09 19:30 UTC
+02:48:02 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1930Z_americas.png
+02:48:02 | INFO | Current processing time: 2024-05-09 19:35 UTC
+02:48:04 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1935Z_americas.png
+02:48:04 | INFO | Current processing time: 2024-05-09 19:40 UTC
+02:48:06 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1940Z_americas.png
+02:48:06 | INFO | Current processing time: 2024-05-09 19:45 UTC
+02:48:09 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1945Z_americas.png
+02:48:09 | INFO | Current processing time: 2024-05-09 19:50 UTC
+02:48:11 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1950Z_americas.png
+02:48:11 | INFO | Current processing time: 2024-05-09 19:55 UTC
+02:48:13 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T1955Z_americas.png
+02:48:13 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\130\2024050920_atec.nc
+02:48:13 | INFO | Current processing time: 2024-05-09 20:00 UTC
+02:48:16 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2000Z_americas.png
+02:48:16 | INFO | Current processing time: 2024-05-09 20:05 UTC
+02:48:18 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2005Z_americas.png
+02:48:18 | INFO | Current processing time: 2024-05-09 20:10 UTC
+02:48:21 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2010Z_americas.png
+02:48:21 | INFO | Current processing time: 2024-05-09 20:15 UTC
+02:48:23 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2015Z_americas.png
+02:48:23 | INFO | Current processing time: 2024-05-09 20:20 UTC
+02:48:25 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2020Z_americas.png
+02:48:25 | INFO | Current processing time: 2024-05-09 20:25 UTC
+02:48:28 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2025Z_americas.png
+02:48:28 | INFO | Current processing time: 2024-05-09 20:30 UTC
+02:48:30 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2030Z_americas.png
+02:48:30 | INFO | Current processing time: 2024-05-09 20:35 UTC
+02:48:32 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2035Z_americas.png
+02:48:32 | INFO | Current processing time: 2024-05-09 20:40 UTC
+02:48:35 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2040Z_americas.png
+02:48:35 | INFO | Current processing time: 2024-05-09 20:45 UTC
+02:48:37 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2045Z_americas.png
+02:48:37 | INFO | Current processing time: 2024-05-09 20:50 UTC
+02:48:40 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2050Z_americas.png
+02:48:40 | INFO | Current processing time: 2024-05-09 20:55 UTC
+02:48:42 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2055Z_americas.png
+02:48:42 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\130\2024050921_atec.nc
+02:48:42 | INFO | Current processing time: 2024-05-09 21:00 UTC
+02:48:44 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2100Z_americas.png
+02:48:44 | INFO | Current processing time: 2024-05-09 21:05 UTC
+02:48:47 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2105Z_americas.png
+02:48:47 | INFO | Current processing time: 2024-05-09 21:10 UTC
+02:48:49 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2110Z_americas.png
+02:48:49 | INFO | Current processing time: 2024-05-09 21:15 UTC
+02:48:51 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2115Z_americas.png
+02:48:51 | INFO | Current processing time: 2024-05-09 21:20 UTC
+02:48:54 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2120Z_americas.png
+02:48:54 | INFO | Current processing time: 2024-05-09 21:25 UTC
+02:48:56 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2125Z_americas.png
+02:48:56 | INFO | Current processing time: 2024-05-09 21:30 UTC
+02:48:58 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2130Z_americas.png
+02:48:58 | INFO | Current processing time: 2024-05-09 21:35 UTC
+02:49:01 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2135Z_americas.png
+02:49:01 | INFO | Current processing time: 2024-05-09 21:40 UTC
+02:49:03 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2140Z_americas.png
+02:49:03 | INFO | Current processing time: 2024-05-09 21:45 UTC
+02:49:05 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2145Z_americas.png
+02:49:05 | INFO | Current processing time: 2024-05-09 21:50 UTC
+02:49:08 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2150Z_americas.png
+02:49:08 | INFO | Current processing time: 2024-05-09 21:55 UTC
+02:49:10 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2155Z_americas.png
+02:49:10 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\130\2024050922_atec.nc
+02:49:10 | INFO | Current processing time: 2024-05-09 22:00 UTC
+02:49:12 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2200Z_americas.png
+02:49:12 | INFO | Current processing time: 2024-05-09 22:05 UTC
+02:49:15 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2205Z_americas.png
+02:49:15 | INFO | Current processing time: 2024-05-09 22:10 UTC
+02:49:17 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2210Z_americas.png
+02:49:17 | INFO | Current processing time: 2024-05-09 22:15 UTC
+02:49:19 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2215Z_americas.png
+02:49:20 | INFO | Current processing time: 2024-05-09 22:20 UTC
+02:49:22 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2220Z_americas.png
+02:49:22 | INFO | Current processing time: 2024-05-09 22:25 UTC
+02:49:24 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2225Z_americas.png
+02:49:24 | INFO | Current processing time: 2024-05-09 22:30 UTC
+02:49:26 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2230Z_americas.png
+02:49:26 | INFO | Current processing time: 2024-05-09 22:35 UTC
+02:49:28 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2235Z_americas.png
+02:49:28 | INFO | Current processing time: 2024-05-09 22:40 UTC
+02:49:31 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2240Z_americas.png
+02:49:31 | INFO | Current processing time: 2024-05-09 22:45 UTC
+02:49:33 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2245Z_americas.png
+02:49:33 | INFO | Current processing time: 2024-05-09 22:50 UTC
+02:49:35 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2250Z_americas.png
+02:49:35 | INFO | Current processing time: 2024-05-09 22:55 UTC
+02:49:38 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2255Z_americas.png
+02:49:38 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\130\2024050923_atec.nc
+02:49:38 | INFO | Current processing time: 2024-05-09 23:00 UTC
+02:49:40 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2300Z_americas.png
+02:49:40 | INFO | Current processing time: 2024-05-09 23:05 UTC
+02:49:42 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2305Z_americas.png
+02:49:42 | INFO | Current processing time: 2024-05-09 23:10 UTC
+02:49:44 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2310Z_americas.png
+02:49:44 | INFO | Current processing time: 2024-05-09 23:15 UTC
+02:49:47 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2315Z_americas.png
+02:49:47 | INFO | Current processing time: 2024-05-09 23:20 UTC
+02:49:50 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2320Z_americas.png
+02:49:50 | INFO | Current processing time: 2024-05-09 23:25 UTC
+02:49:52 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2325Z_americas.png
+02:49:53 | INFO | Current processing time: 2024-05-09 23:30 UTC
+02:49:55 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2330Z_americas.png
+02:49:55 | INFO | Current processing time: 2024-05-09 23:35 UTC
+02:49:58 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2335Z_americas.png
+02:49:58 | INFO | Current processing time: 2024-05-09 23:40 UTC
+02:50:03 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2340Z_americas.png
+02:50:03 | INFO | Current processing time: 2024-05-09 23:45 UTC
+02:50:07 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2345Z_americas.png
+02:50:07 | INFO | Current processing time: 2024-05-09 23:50 UTC
+02:50:09 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2350Z_americas.png
+02:50:09 | INFO | Current processing time: 2024-05-09 23:55 UTC
+02:50:13 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\130\VTEC_20240509T2355Z_americas.png
+02:50:13 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\131\2024051000_atec.nc
+02:50:13 | INFO | Current processing time: 2024-05-10 00:00 UTC
+02:50:16 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0000Z_americas.png
+02:50:16 | INFO | Current processing time: 2024-05-10 00:05 UTC
+02:50:19 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0005Z_americas.png
+02:50:19 | INFO | Current processing time: 2024-05-10 00:10 UTC
+02:50:22 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0010Z_americas.png
+02:50:22 | INFO | Current processing time: 2024-05-10 00:15 UTC
+02:50:25 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0015Z_americas.png
+02:50:25 | INFO | Current processing time: 2024-05-10 00:20 UTC
+02:50:28 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0020Z_americas.png
+02:50:28 | INFO | Current processing time: 2024-05-10 00:25 UTC
+02:50:31 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0025Z_americas.png
+02:50:31 | INFO | Current processing time: 2024-05-10 00:30 UTC
+02:50:34 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0030Z_americas.png
+02:50:34 | INFO | Current processing time: 2024-05-10 00:35 UTC
+02:50:37 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0035Z_americas.png
+02:50:37 | INFO | Current processing time: 2024-05-10 00:40 UTC
+02:50:39 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0040Z_americas.png
+02:50:39 | INFO | Current processing time: 2024-05-10 00:45 UTC
+02:50:42 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0045Z_americas.png
+02:50:42 | INFO | Current processing time: 2024-05-10 00:50 UTC
+02:50:45 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0050Z_americas.png
+02:50:45 | INFO | Current processing time: 2024-05-10 00:55 UTC
+02:50:48 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0055Z_americas.png
+02:50:48 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\131\2024051001_atec.nc
+02:50:48 | INFO | Current processing time: 2024-05-10 01:00 UTC
+02:50:51 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0100Z_americas.png
+02:50:51 | INFO | Current processing time: 2024-05-10 01:05 UTC
+02:50:54 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0105Z_americas.png
+02:50:54 | INFO | Current processing time: 2024-05-10 01:10 UTC
+02:50:57 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0110Z_americas.png
+02:50:57 | INFO | Current processing time: 2024-05-10 01:15 UTC
+02:51:00 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0115Z_americas.png
+02:51:00 | INFO | Current processing time: 2024-05-10 01:20 UTC
+02:51:03 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0120Z_americas.png
+02:51:03 | INFO | Current processing time: 2024-05-10 01:25 UTC
+02:51:06 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0125Z_americas.png
+02:51:06 | INFO | Current processing time: 2024-05-10 01:30 UTC
+02:51:09 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0130Z_americas.png
+02:51:09 | INFO | Current processing time: 2024-05-10 01:35 UTC
+02:51:12 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0135Z_americas.png
+02:51:12 | INFO | Current processing time: 2024-05-10 01:40 UTC
+02:51:15 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0140Z_americas.png
+02:51:15 | INFO | Current processing time: 2024-05-10 01:45 UTC
+02:51:20 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0145Z_americas.png
+02:51:20 | INFO | Current processing time: 2024-05-10 01:50 UTC
+02:51:23 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0150Z_americas.png
+02:51:23 | INFO | Current processing time: 2024-05-10 01:55 UTC
+02:51:26 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0155Z_americas.png
+02:51:26 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\131\2024051002_atec.nc
+02:51:26 | INFO | Current processing time: 2024-05-10 02:00 UTC
+02:51:28 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0200Z_americas.png
+02:51:28 | INFO | Current processing time: 2024-05-10 02:05 UTC
+02:51:31 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0205Z_americas.png
+02:51:31 | INFO | Current processing time: 2024-05-10 02:10 UTC
+02:51:34 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0210Z_americas.png
+02:51:34 | INFO | Current processing time: 2024-05-10 02:15 UTC
+02:51:38 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0215Z_americas.png
+02:51:38 | INFO | Current processing time: 2024-05-10 02:20 UTC
+02:51:41 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0220Z_americas.png
+02:51:41 | INFO | Current processing time: 2024-05-10 02:25 UTC
+02:51:44 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0225Z_americas.png
+02:51:44 | INFO | Current processing time: 2024-05-10 02:30 UTC
+02:51:47 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0230Z_americas.png
+02:51:47 | INFO | Current processing time: 2024-05-10 02:35 UTC
+02:51:50 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0235Z_americas.png
+02:51:50 | INFO | Current processing time: 2024-05-10 02:40 UTC
+02:51:53 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0240Z_americas.png
+02:51:53 | INFO | Current processing time: 2024-05-10 02:45 UTC
+02:51:56 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0245Z_americas.png
+02:51:56 | INFO | Current processing time: 2024-05-10 02:50 UTC
+02:51:59 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0250Z_americas.png
+02:51:59 | INFO | Current processing time: 2024-05-10 02:55 UTC
+02:52:02 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0255Z_americas.png
+02:52:02 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\131\2024051003_atec.nc
+02:52:02 | INFO | Current processing time: 2024-05-10 03:00 UTC
+02:52:06 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0300Z_americas.png
+02:52:06 | INFO | Current processing time: 2024-05-10 03:05 UTC
+02:52:10 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0305Z_americas.png
+02:52:10 | INFO | Current processing time: 2024-05-10 03:10 UTC
+02:52:13 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0310Z_americas.png
+02:52:13 | INFO | Current processing time: 2024-05-10 03:15 UTC
+02:52:16 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0315Z_americas.png
+02:52:16 | INFO | Current processing time: 2024-05-10 03:20 UTC
+02:52:18 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0320Z_americas.png
+02:52:18 | INFO | Current processing time: 2024-05-10 03:25 UTC
+02:52:21 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0325Z_americas.png
+02:52:21 | INFO | Current processing time: 2024-05-10 03:30 UTC
+02:52:23 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0330Z_americas.png
+02:52:23 | INFO | Current processing time: 2024-05-10 03:35 UTC
+02:52:26 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0335Z_americas.png
+02:52:26 | INFO | Current processing time: 2024-05-10 03:40 UTC
+02:52:28 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0340Z_americas.png
+02:52:28 | INFO | Current processing time: 2024-05-10 03:45 UTC
+02:52:30 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0345Z_americas.png
+02:52:30 | INFO | Current processing time: 2024-05-10 03:50 UTC
+02:52:33 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0350Z_americas.png
+02:52:33 | INFO | Current processing time: 2024-05-10 03:55 UTC
+02:52:35 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0355Z_americas.png
+02:52:35 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\131\2024051004_atec.nc
+02:52:35 | INFO | Current processing time: 2024-05-10 04:00 UTC
+02:52:37 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0400Z_americas.png
+02:52:37 | INFO | Current processing time: 2024-05-10 04:05 UTC
+02:52:40 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0405Z_americas.png
+02:52:40 | INFO | Current processing time: 2024-05-10 04:10 UTC
+02:52:42 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0410Z_americas.png
+02:52:42 | INFO | Current processing time: 2024-05-10 04:15 UTC
+02:52:44 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0415Z_americas.png
+02:52:44 | INFO | Current processing time: 2024-05-10 04:20 UTC
+02:52:47 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0420Z_americas.png
+02:52:47 | INFO | Current processing time: 2024-05-10 04:25 UTC
+02:52:49 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0425Z_americas.png
+02:52:49 | INFO | Current processing time: 2024-05-10 04:30 UTC
+02:52:51 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0430Z_americas.png
+02:52:51 | INFO | Current processing time: 2024-05-10 04:35 UTC
+02:52:53 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0435Z_americas.png
+02:52:53 | INFO | Current processing time: 2024-05-10 04:40 UTC
+02:52:56 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0440Z_americas.png
+02:52:56 | INFO | Current processing time: 2024-05-10 04:45 UTC
+02:52:58 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0445Z_americas.png
+02:52:58 | INFO | Current processing time: 2024-05-10 04:50 UTC
+02:53:00 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0450Z_americas.png
+02:53:00 | INFO | Current processing time: 2024-05-10 04:55 UTC
+02:53:03 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0455Z_americas.png
+02:53:03 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\131\2024051005_atec.nc
+02:53:03 | INFO | Current processing time: 2024-05-10 05:00 UTC
+02:53:05 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0500Z_americas.png
+02:53:05 | INFO | Current processing time: 2024-05-10 05:05 UTC
+02:53:07 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0505Z_americas.png
+02:53:07 | INFO | Current processing time: 2024-05-10 05:10 UTC
+02:53:10 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0510Z_americas.png
+02:53:10 | INFO | Current processing time: 2024-05-10 05:15 UTC
+02:53:12 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0515Z_americas.png
+02:53:12 | INFO | Current processing time: 2024-05-10 05:20 UTC
+02:53:14 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0520Z_americas.png
+02:53:14 | INFO | Current processing time: 2024-05-10 05:25 UTC
+02:53:17 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0525Z_americas.png
+02:53:17 | INFO | Current processing time: 2024-05-10 05:30 UTC
+02:53:19 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0530Z_americas.png
+02:53:19 | INFO | Current processing time: 2024-05-10 05:35 UTC
+02:53:21 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0535Z_americas.png
+02:53:21 | INFO | Current processing time: 2024-05-10 05:40 UTC
+02:53:23 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0540Z_americas.png
+02:53:23 | INFO | Current processing time: 2024-05-10 05:45 UTC
+02:53:26 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0545Z_americas.png
+02:53:26 | INFO | Current processing time: 2024-05-10 05:50 UTC
+02:53:28 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0550Z_americas.png
+02:53:28 | INFO | Current processing time: 2024-05-10 05:55 UTC
+02:53:30 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0555Z_americas.png
+02:53:30 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\131\2024051006_atec.nc
+02:53:30 | INFO | Current processing time: 2024-05-10 06:00 UTC
+02:53:33 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0600Z_americas.png
+02:53:33 | INFO | Current processing time: 2024-05-10 06:05 UTC
+02:53:35 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0605Z_americas.png
+02:53:35 | INFO | Current processing time: 2024-05-10 06:10 UTC
+02:53:37 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0610Z_americas.png
+02:53:37 | INFO | Current processing time: 2024-05-10 06:15 UTC
+02:53:40 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0615Z_americas.png
+02:53:40 | INFO | Current processing time: 2024-05-10 06:20 UTC
+02:53:42 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0620Z_americas.png
+02:53:42 | INFO | Current processing time: 2024-05-10 06:25 UTC
+02:53:44 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0625Z_americas.png
+02:53:44 | INFO | Current processing time: 2024-05-10 06:30 UTC
+02:53:46 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0630Z_americas.png
+02:53:46 | INFO | Current processing time: 2024-05-10 06:35 UTC
+02:53:49 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0635Z_americas.png
+02:53:49 | INFO | Current processing time: 2024-05-10 06:40 UTC
+02:53:51 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0640Z_americas.png
+02:53:51 | INFO | Current processing time: 2024-05-10 06:45 UTC
+02:53:53 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0645Z_americas.png
+02:53:53 | INFO | Current processing time: 2024-05-10 06:50 UTC
+02:53:55 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0650Z_americas.png
+02:53:55 | INFO | Current processing time: 2024-05-10 06:55 UTC
+02:53:58 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0655Z_americas.png
+02:53:58 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\131\2024051007_atec.nc
+02:53:58 | INFO | Current processing time: 2024-05-10 07:00 UTC
+02:54:00 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0700Z_americas.png
+02:54:00 | INFO | Current processing time: 2024-05-10 07:05 UTC
+02:54:02 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0705Z_americas.png
+02:54:02 | INFO | Current processing time: 2024-05-10 07:10 UTC
+02:54:04 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0710Z_americas.png
+02:54:04 | INFO | Current processing time: 2024-05-10 07:15 UTC
+02:54:07 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0715Z_americas.png
+02:54:07 | INFO | Current processing time: 2024-05-10 07:20 UTC
+02:54:09 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0720Z_americas.png
+02:54:09 | INFO | Current processing time: 2024-05-10 07:25 UTC
+02:54:11 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0725Z_americas.png
+02:54:11 | INFO | Current processing time: 2024-05-10 07:30 UTC
+02:54:14 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0730Z_americas.png
+02:54:14 | INFO | Current processing time: 2024-05-10 07:35 UTC
+02:54:16 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0735Z_americas.png
+02:54:16 | INFO | Current processing time: 2024-05-10 07:40 UTC
+02:54:18 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0740Z_americas.png
+02:54:18 | INFO | Current processing time: 2024-05-10 07:45 UTC
+02:54:21 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0745Z_americas.png
+02:54:21 | INFO | Current processing time: 2024-05-10 07:50 UTC
+02:54:23 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0750Z_americas.png
+02:54:23 | INFO | Current processing time: 2024-05-10 07:55 UTC
+02:54:25 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0755Z_americas.png
+02:54:25 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\131\2024051008_atec.nc
+02:54:25 | INFO | Current processing time: 2024-05-10 08:00 UTC
+02:54:27 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0800Z_americas.png
+02:54:27 | INFO | Current processing time: 2024-05-10 08:05 UTC
+02:54:29 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0805Z_americas.png
+02:54:29 | INFO | Current processing time: 2024-05-10 08:10 UTC
+02:54:32 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0810Z_americas.png
+02:54:32 | INFO | Current processing time: 2024-05-10 08:15 UTC
+02:54:34 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0815Z_americas.png
+02:54:34 | INFO | Current processing time: 2024-05-10 08:20 UTC
+02:54:36 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0820Z_americas.png
+02:54:36 | INFO | Current processing time: 2024-05-10 08:25 UTC
+02:54:38 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0825Z_americas.png
+02:54:39 | INFO | Current processing time: 2024-05-10 08:30 UTC
+02:54:41 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0830Z_americas.png
+02:54:41 | INFO | Current processing time: 2024-05-10 08:35 UTC
+02:54:43 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0835Z_americas.png
+02:54:43 | INFO | Current processing time: 2024-05-10 08:40 UTC
+02:54:45 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0840Z_americas.png
+02:54:45 | INFO | Current processing time: 2024-05-10 08:45 UTC
+02:54:48 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0845Z_americas.png
+02:54:48 | INFO | Current processing time: 2024-05-10 08:50 UTC
+02:54:50 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0850Z_americas.png
+02:54:50 | INFO | Current processing time: 2024-05-10 08:55 UTC
+02:54:52 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0855Z_americas.png
+02:54:52 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\131\2024051009_atec.nc
+02:54:52 | INFO | Current processing time: 2024-05-10 09:00 UTC
+02:54:54 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0900Z_americas.png
+02:54:54 | INFO | Current processing time: 2024-05-10 09:05 UTC
+02:54:57 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0905Z_americas.png
+02:54:57 | INFO | Current processing time: 2024-05-10 09:10 UTC
+02:54:59 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0910Z_americas.png
+02:54:59 | INFO | Current processing time: 2024-05-10 09:15 UTC
+02:55:01 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0915Z_americas.png
+02:55:01 | INFO | Current processing time: 2024-05-10 09:20 UTC
+02:55:04 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0920Z_americas.png
+02:55:04 | INFO | Current processing time: 2024-05-10 09:25 UTC
+02:55:06 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0925Z_americas.png
+02:55:06 | INFO | Current processing time: 2024-05-10 09:30 UTC
+02:55:08 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0930Z_americas.png
+02:55:08 | INFO | Current processing time: 2024-05-10 09:35 UTC
+02:55:11 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0935Z_americas.png
+02:55:11 | INFO | Current processing time: 2024-05-10 09:40 UTC
+02:55:14 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0940Z_americas.png
+02:55:14 | INFO | Current processing time: 2024-05-10 09:45 UTC
+02:55:17 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0945Z_americas.png
+02:55:17 | INFO | Current processing time: 2024-05-10 09:50 UTC
+02:55:19 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0950Z_americas.png
+02:55:19 | INFO | Current processing time: 2024-05-10 09:55 UTC
+02:55:22 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T0955Z_americas.png
+02:55:22 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\131\2024051010_atec.nc
+02:55:22 | INFO | Current processing time: 2024-05-10 10:00 UTC
+02:55:24 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1000Z_americas.png
+02:55:24 | INFO | Current processing time: 2024-05-10 10:05 UTC
+02:55:26 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1005Z_americas.png
+02:55:26 | INFO | Current processing time: 2024-05-10 10:10 UTC
+02:55:29 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1010Z_americas.png
+02:55:29 | INFO | Current processing time: 2024-05-10 10:15 UTC
+02:55:31 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1015Z_americas.png
+02:55:31 | INFO | Current processing time: 2024-05-10 10:20 UTC
+02:55:34 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1020Z_americas.png
+02:55:34 | INFO | Current processing time: 2024-05-10 10:25 UTC
+02:55:37 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1025Z_americas.png
+02:55:37 | INFO | Current processing time: 2024-05-10 10:30 UTC
+02:55:39 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1030Z_americas.png
+02:55:39 | INFO | Current processing time: 2024-05-10 10:35 UTC
+02:55:42 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1035Z_americas.png
+02:55:42 | INFO | Current processing time: 2024-05-10 10:40 UTC
+02:55:44 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1040Z_americas.png
+02:55:44 | INFO | Current processing time: 2024-05-10 10:45 UTC
+02:55:48 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1045Z_americas.png
+02:55:48 | INFO | Current processing time: 2024-05-10 10:50 UTC
+02:55:50 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1050Z_americas.png
+02:55:50 | INFO | Current processing time: 2024-05-10 10:55 UTC
+02:55:53 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1055Z_americas.png
+02:55:53 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\131\2024051011_atec.nc
+02:55:53 | INFO | Current processing time: 2024-05-10 11:00 UTC
+02:55:55 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1100Z_americas.png
+02:55:55 | INFO | Current processing time: 2024-05-10 11:05 UTC
+02:55:58 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1105Z_americas.png
+02:55:58 | INFO | Current processing time: 2024-05-10 11:10 UTC
+02:56:00 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1110Z_americas.png
+02:56:00 | INFO | Current processing time: 2024-05-10 11:15 UTC
+02:56:03 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1115Z_americas.png
+02:56:03 | INFO | Current processing time: 2024-05-10 11:20 UTC
+02:56:06 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1120Z_americas.png
+02:56:06 | INFO | Current processing time: 2024-05-10 11:25 UTC
+02:56:08 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1125Z_americas.png
+02:56:08 | INFO | Current processing time: 2024-05-10 11:30 UTC
+02:56:11 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1130Z_americas.png
+02:56:11 | INFO | Current processing time: 2024-05-10 11:35 UTC
+02:56:14 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1135Z_americas.png
+02:56:14 | INFO | Current processing time: 2024-05-10 11:40 UTC
+02:56:16 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1140Z_americas.png
+02:56:16 | INFO | Current processing time: 2024-05-10 11:45 UTC
+02:56:19 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1145Z_americas.png
+02:56:19 | INFO | Current processing time: 2024-05-10 11:50 UTC
+02:56:21 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1150Z_americas.png
+02:56:21 | INFO | Current processing time: 2024-05-10 11:55 UTC
+02:56:24 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1155Z_americas.png
+02:56:24 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\131\2024051012_atec.nc
+02:56:24 | INFO | Current processing time: 2024-05-10 12:00 UTC
+02:56:26 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1200Z_americas.png
+02:56:26 | INFO | Current processing time: 2024-05-10 12:05 UTC
+02:56:29 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1205Z_americas.png
+02:56:29 | INFO | Current processing time: 2024-05-10 12:10 UTC
+02:56:31 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1210Z_americas.png
+02:56:31 | INFO | Current processing time: 2024-05-10 12:15 UTC
+02:56:35 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1215Z_americas.png
+02:56:35 | INFO | Current processing time: 2024-05-10 12:20 UTC
+02:56:38 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1220Z_americas.png
+02:56:38 | INFO | Current processing time: 2024-05-10 12:25 UTC
+02:56:40 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1225Z_americas.png
+02:56:40 | INFO | Current processing time: 2024-05-10 12:30 UTC
+02:56:43 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1230Z_americas.png
+02:56:43 | INFO | Current processing time: 2024-05-10 12:35 UTC
+02:56:45 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1235Z_americas.png
+02:56:45 | INFO | Current processing time: 2024-05-10 12:40 UTC
+02:56:47 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1240Z_americas.png
+02:56:47 | INFO | Current processing time: 2024-05-10 12:45 UTC
+02:56:50 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1245Z_americas.png
+02:56:50 | INFO | Current processing time: 2024-05-10 12:50 UTC
+02:56:52 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1250Z_americas.png
+02:56:52 | INFO | Current processing time: 2024-05-10 12:55 UTC
+02:56:55 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1255Z_americas.png
+02:56:55 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\131\2024051013_atec.nc
+02:56:55 | INFO | Current processing time: 2024-05-10 13:00 UTC
+02:56:58 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1300Z_americas.png
+02:56:58 | INFO | Current processing time: 2024-05-10 13:05 UTC
+02:57:01 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1305Z_americas.png
+02:57:01 | INFO | Current processing time: 2024-05-10 13:10 UTC
+02:57:03 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1310Z_americas.png
+02:57:03 | INFO | Current processing time: 2024-05-10 13:15 UTC
+02:57:06 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1315Z_americas.png
+02:57:06 | INFO | Current processing time: 2024-05-10 13:20 UTC
+02:57:10 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1320Z_americas.png
+02:57:10 | INFO | Current processing time: 2024-05-10 13:25 UTC
+02:57:14 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1325Z_americas.png
+02:57:14 | INFO | Current processing time: 2024-05-10 13:30 UTC
+02:57:17 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1330Z_americas.png
+02:57:17 | INFO | Current processing time: 2024-05-10 13:35 UTC
+02:57:20 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1335Z_americas.png
+02:57:20 | INFO | Current processing time: 2024-05-10 13:40 UTC
+02:57:22 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1340Z_americas.png
+02:57:22 | INFO | Current processing time: 2024-05-10 13:45 UTC
+02:57:25 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1345Z_americas.png
+02:57:25 | INFO | Current processing time: 2024-05-10 13:50 UTC
+02:57:28 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1350Z_americas.png
+02:57:28 | INFO | Current processing time: 2024-05-10 13:55 UTC
+02:57:31 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1355Z_americas.png
+02:57:31 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\131\2024051014_atec.nc
+02:57:31 | INFO | Current processing time: 2024-05-10 14:00 UTC
+02:57:34 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1400Z_americas.png
+02:57:34 | INFO | Current processing time: 2024-05-10 14:05 UTC
+02:57:37 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1405Z_americas.png
+02:57:37 | INFO | Current processing time: 2024-05-10 14:10 UTC
+02:57:40 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1410Z_americas.png
+02:57:40 | INFO | Current processing time: 2024-05-10 14:15 UTC
+02:57:42 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1415Z_americas.png
+02:57:42 | INFO | Current processing time: 2024-05-10 14:20 UTC
+02:57:45 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1420Z_americas.png
+02:57:45 | INFO | Current processing time: 2024-05-10 14:25 UTC
+02:57:47 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1425Z_americas.png
+02:57:47 | INFO | Current processing time: 2024-05-10 14:30 UTC
+02:57:50 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1430Z_americas.png
+02:57:50 | INFO | Current processing time: 2024-05-10 14:35 UTC
+02:57:53 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1435Z_americas.png
+02:57:53 | INFO | Current processing time: 2024-05-10 14:40 UTC
+02:57:55 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1440Z_americas.png
+02:57:55 | INFO | Current processing time: 2024-05-10 14:45 UTC
+02:57:58 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1445Z_americas.png
+02:57:58 | INFO | Current processing time: 2024-05-10 14:50 UTC
+02:58:00 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1450Z_americas.png
+02:58:00 | INFO | Current processing time: 2024-05-10 14:55 UTC
+02:58:03 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1455Z_americas.png
+02:58:03 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\131\2024051015_atec.nc
+02:58:03 | INFO | Current processing time: 2024-05-10 15:00 UTC
+02:58:05 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1500Z_americas.png
+02:58:05 | INFO | Current processing time: 2024-05-10 15:05 UTC
+02:58:08 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1505Z_americas.png
+02:58:08 | INFO | Current processing time: 2024-05-10 15:10 UTC
+02:58:11 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1510Z_americas.png
+02:58:11 | INFO | Current processing time: 2024-05-10 15:15 UTC
+02:58:13 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1515Z_americas.png
+02:58:13 | INFO | Current processing time: 2024-05-10 15:20 UTC
+02:58:16 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1520Z_americas.png
+02:58:16 | INFO | Current processing time: 2024-05-10 15:25 UTC
+02:58:18 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1525Z_americas.png
+02:58:18 | INFO | Current processing time: 2024-05-10 15:30 UTC
+02:58:21 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1530Z_americas.png
+02:58:21 | INFO | Current processing time: 2024-05-10 15:35 UTC
+02:58:23 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1535Z_americas.png
+02:58:23 | INFO | Current processing time: 2024-05-10 15:40 UTC
+02:58:26 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1540Z_americas.png
+02:58:26 | INFO | Current processing time: 2024-05-10 15:45 UTC
+02:58:28 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1545Z_americas.png
+02:58:28 | INFO | Current processing time: 2024-05-10 15:50 UTC
+02:58:31 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1550Z_americas.png
+02:58:31 | INFO | Current processing time: 2024-05-10 15:55 UTC
+02:58:33 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1555Z_americas.png
+02:58:33 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\131\2024051016_atec.nc
+02:58:33 | INFO | Current processing time: 2024-05-10 16:00 UTC
+02:58:36 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1600Z_americas.png
+02:58:36 | INFO | Current processing time: 2024-05-10 16:05 UTC
+02:58:39 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1605Z_americas.png
+02:58:39 | INFO | Current processing time: 2024-05-10 16:10 UTC
+02:58:41 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1610Z_americas.png
+02:58:41 | INFO | Current processing time: 2024-05-10 16:15 UTC
+02:58:44 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1615Z_americas.png
+02:58:44 | INFO | Current processing time: 2024-05-10 16:20 UTC
+02:58:46 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1620Z_americas.png
+02:58:46 | INFO | Current processing time: 2024-05-10 16:25 UTC
+02:58:49 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1625Z_americas.png
+02:58:49 | INFO | Current processing time: 2024-05-10 16:30 UTC
+02:58:51 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1630Z_americas.png
+02:58:51 | INFO | Current processing time: 2024-05-10 16:35 UTC
+02:58:54 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1635Z_americas.png
+02:58:54 | INFO | Current processing time: 2024-05-10 16:40 UTC
+02:58:57 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1640Z_americas.png
+02:58:57 | INFO | Current processing time: 2024-05-10 16:45 UTC
+02:58:59 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1645Z_americas.png
+02:58:59 | INFO | Current processing time: 2024-05-10 16:50 UTC
+02:59:02 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1650Z_americas.png
+02:59:02 | INFO | Current processing time: 2024-05-10 16:55 UTC
+02:59:04 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1655Z_americas.png
+02:59:04 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\131\2024051017_atec.nc
+02:59:04 | INFO | Current processing time: 2024-05-10 17:00 UTC
+02:59:07 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1700Z_americas.png
+02:59:07 | INFO | Current processing time: 2024-05-10 17:05 UTC
+02:59:10 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1705Z_americas.png
+02:59:10 | INFO | Current processing time: 2024-05-10 17:10 UTC
+02:59:12 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1710Z_americas.png
+02:59:12 | INFO | Current processing time: 2024-05-10 17:15 UTC
+02:59:15 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1715Z_americas.png
+02:59:15 | INFO | Current processing time: 2024-05-10 17:20 UTC
+02:59:18 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1720Z_americas.png
+02:59:18 | INFO | Current processing time: 2024-05-10 17:25 UTC
+02:59:20 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1725Z_americas.png
+02:59:20 | INFO | Current processing time: 2024-05-10 17:30 UTC
+02:59:23 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1730Z_americas.png
+02:59:23 | INFO | Current processing time: 2024-05-10 17:35 UTC
+02:59:25 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1735Z_americas.png
+02:59:25 | INFO | Current processing time: 2024-05-10 17:40 UTC
+02:59:28 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1740Z_americas.png
+02:59:28 | INFO | Current processing time: 2024-05-10 17:45 UTC
+02:59:30 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1745Z_americas.png
+02:59:30 | INFO | Current processing time: 2024-05-10 17:50 UTC
+02:59:33 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1750Z_americas.png
+02:59:33 | INFO | Current processing time: 2024-05-10 17:55 UTC
+02:59:35 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1755Z_americas.png
+02:59:35 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\131\2024051018_atec.nc
+02:59:35 | INFO | Current processing time: 2024-05-10 18:00 UTC
+02:59:38 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1800Z_americas.png
+02:59:38 | INFO | Current processing time: 2024-05-10 18:05 UTC
+02:59:40 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1805Z_americas.png
+02:59:40 | INFO | Current processing time: 2024-05-10 18:10 UTC
+02:59:43 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1810Z_americas.png
+02:59:43 | INFO | Current processing time: 2024-05-10 18:15 UTC
+02:59:46 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1815Z_americas.png
+02:59:46 | INFO | Current processing time: 2024-05-10 18:20 UTC
+02:59:48 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1820Z_americas.png
+02:59:48 | INFO | Current processing time: 2024-05-10 18:25 UTC
+02:59:51 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1825Z_americas.png
+02:59:51 | INFO | Current processing time: 2024-05-10 18:30 UTC
+02:59:53 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1830Z_americas.png
+02:59:53 | INFO | Current processing time: 2024-05-10 18:35 UTC
+02:59:56 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1835Z_americas.png
+02:59:56 | INFO | Current processing time: 2024-05-10 18:40 UTC
+02:59:58 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1840Z_americas.png
+02:59:58 | INFO | Current processing time: 2024-05-10 18:45 UTC
+03:00:01 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1845Z_americas.png
+03:00:01 | INFO | Current processing time: 2024-05-10 18:50 UTC
+03:00:04 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1850Z_americas.png
+03:00:04 | INFO | Current processing time: 2024-05-10 18:55 UTC
+03:00:06 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1855Z_americas.png
+03:00:06 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\131\2024051019_atec.nc
+03:00:06 | INFO | Current processing time: 2024-05-10 19:00 UTC
+03:00:09 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1900Z_americas.png
+03:00:09 | INFO | Current processing time: 2024-05-10 19:05 UTC
+03:00:11 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1905Z_americas.png
+03:00:11 | INFO | Current processing time: 2024-05-10 19:10 UTC
+03:00:14 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1910Z_americas.png
+03:00:14 | INFO | Current processing time: 2024-05-10 19:15 UTC
+03:00:16 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1915Z_americas.png
+03:00:16 | INFO | Current processing time: 2024-05-10 19:20 UTC
+03:00:19 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1920Z_americas.png
+03:00:19 | INFO | Current processing time: 2024-05-10 19:25 UTC
+03:00:22 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1925Z_americas.png
+03:00:22 | INFO | Current processing time: 2024-05-10 19:30 UTC
+03:00:24 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1930Z_americas.png
+03:00:24 | INFO | Current processing time: 2024-05-10 19:35 UTC
+03:00:27 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1935Z_americas.png
+03:00:27 | INFO | Current processing time: 2024-05-10 19:40 UTC
+03:00:29 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1940Z_americas.png
+03:00:29 | INFO | Current processing time: 2024-05-10 19:45 UTC
+03:00:32 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1945Z_americas.png
+03:00:32 | INFO | Current processing time: 2024-05-10 19:50 UTC
+03:00:34 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1950Z_americas.png
+03:00:34 | INFO | Current processing time: 2024-05-10 19:55 UTC
+03:00:37 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T1955Z_americas.png
+03:00:37 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\131\2024051020_atec.nc
+03:00:37 | INFO | Current processing time: 2024-05-10 20:00 UTC
+03:00:39 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2000Z_americas.png
+03:00:39 | INFO | Current processing time: 2024-05-10 20:05 UTC
+03:00:42 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2005Z_americas.png
+03:00:42 | INFO | Current processing time: 2024-05-10 20:10 UTC
+03:00:45 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2010Z_americas.png
+03:00:45 | INFO | Current processing time: 2024-05-10 20:15 UTC
+03:00:47 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2015Z_americas.png
+03:00:47 | INFO | Current processing time: 2024-05-10 20:20 UTC
+03:00:50 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2020Z_americas.png
+03:00:50 | INFO | Current processing time: 2024-05-10 20:25 UTC
+03:00:52 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2025Z_americas.png
+03:00:52 | INFO | Current processing time: 2024-05-10 20:30 UTC
+03:00:55 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2030Z_americas.png
+03:00:55 | INFO | Current processing time: 2024-05-10 20:35 UTC
+03:00:57 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2035Z_americas.png
+03:00:57 | INFO | Current processing time: 2024-05-10 20:40 UTC
+03:01:00 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2040Z_americas.png
+03:01:00 | INFO | Current processing time: 2024-05-10 20:45 UTC
+03:01:02 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2045Z_americas.png
+03:01:02 | INFO | Current processing time: 2024-05-10 20:50 UTC
+03:01:05 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2050Z_americas.png
+03:01:05 | INFO | Current processing time: 2024-05-10 20:55 UTC
+03:01:08 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2055Z_americas.png
+03:01:08 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\131\2024051021_atec.nc
+03:01:08 | INFO | Current processing time: 2024-05-10 21:00 UTC
+03:01:10 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2100Z_americas.png
+03:01:10 | INFO | Current processing time: 2024-05-10 21:05 UTC
+03:01:13 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2105Z_americas.png
+03:01:13 | INFO | Current processing time: 2024-05-10 21:10 UTC
+03:01:16 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2110Z_americas.png
+03:01:16 | INFO | Current processing time: 2024-05-10 21:15 UTC
+03:01:18 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2115Z_americas.png
+03:01:18 | INFO | Current processing time: 2024-05-10 21:20 UTC
+03:01:21 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2120Z_americas.png
+03:01:21 | INFO | Current processing time: 2024-05-10 21:25 UTC
+03:01:24 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2125Z_americas.png
+03:01:24 | INFO | Current processing time: 2024-05-10 21:30 UTC
+03:01:26 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2130Z_americas.png
+03:01:26 | INFO | Current processing time: 2024-05-10 21:35 UTC
+03:01:29 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2135Z_americas.png
+03:01:29 | INFO | Current processing time: 2024-05-10 21:40 UTC
+03:01:31 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2140Z_americas.png
+03:01:31 | INFO | Current processing time: 2024-05-10 21:45 UTC
+03:01:34 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2145Z_americas.png
+03:01:34 | INFO | Current processing time: 2024-05-10 21:50 UTC
+03:01:36 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2150Z_americas.png
+03:01:37 | INFO | Current processing time: 2024-05-10 21:55 UTC
+03:01:39 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2155Z_americas.png
+03:01:39 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\131\2024051022_atec.nc
+03:01:39 | INFO | Current processing time: 2024-05-10 22:00 UTC
+03:01:42 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2200Z_americas.png
+03:01:42 | INFO | Current processing time: 2024-05-10 22:05 UTC
+03:01:45 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2205Z_americas.png
+03:01:45 | INFO | Current processing time: 2024-05-10 22:10 UTC
+03:01:49 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2210Z_americas.png
+03:01:49 | INFO | Current processing time: 2024-05-10 22:15 UTC
+03:01:52 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2215Z_americas.png
+03:01:52 | INFO | Current processing time: 2024-05-10 22:20 UTC
+03:01:55 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2220Z_americas.png
+03:01:55 | INFO | Current processing time: 2024-05-10 22:25 UTC
+03:01:58 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2225Z_americas.png
+03:01:58 | INFO | Current processing time: 2024-05-10 22:30 UTC
+03:02:01 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2230Z_americas.png
+03:02:01 | INFO | Current processing time: 2024-05-10 22:35 UTC
+03:02:04 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2235Z_americas.png
+03:02:04 | INFO | Current processing time: 2024-05-10 22:40 UTC
+03:02:08 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2240Z_americas.png
+03:02:08 | INFO | Current processing time: 2024-05-10 22:45 UTC
+03:02:11 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2245Z_americas.png
+03:02:11 | INFO | Current processing time: 2024-05-10 22:50 UTC
+03:02:13 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2250Z_americas.png
+03:02:13 | INFO | Current processing time: 2024-05-10 22:55 UTC
+03:02:16 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2255Z_americas.png
+03:02:16 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\131\2024051023_atec.nc
+03:02:16 | INFO | Current processing time: 2024-05-10 23:00 UTC
+03:02:18 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2300Z_americas.png
+03:02:18 | INFO | Current processing time: 2024-05-10 23:05 UTC
+03:02:21 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2305Z_americas.png
+03:02:21 | INFO | Current processing time: 2024-05-10 23:10 UTC
+03:02:23 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2310Z_americas.png
+03:02:23 | INFO | Current processing time: 2024-05-10 23:15 UTC
+03:02:26 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2315Z_americas.png
+03:02:26 | INFO | Current processing time: 2024-05-10 23:20 UTC
+03:02:28 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2320Z_americas.png
+03:02:28 | INFO | Current processing time: 2024-05-10 23:25 UTC
+03:02:31 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2325Z_americas.png
+03:02:31 | INFO | Current processing time: 2024-05-10 23:30 UTC
+03:02:34 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2330Z_americas.png
+03:02:34 | INFO | Current processing time: 2024-05-10 23:35 UTC
+03:02:37 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2335Z_americas.png
+03:02:37 | INFO | Current processing time: 2024-05-10 23:40 UTC
+03:02:39 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2340Z_americas.png
+03:02:39 | INFO | Current processing time: 2024-05-10 23:45 UTC
+03:02:42 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2345Z_americas.png
+03:02:42 | INFO | Current processing time: 2024-05-10 23:50 UTC
+03:02:44 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2350Z_americas.png
+03:02:44 | INFO | Current processing time: 2024-05-10 23:55 UTC
+03:02:47 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\131\VTEC_20240510T2355Z_americas.png
+03:02:47 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\132\2024051100_atec.nc
+03:02:47 | INFO | Current processing time: 2024-05-11 00:00 UTC
+03:02:49 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\132\VTEC_20240511T0000Z_americas.png
+03:02:49 | INFO | Current processing time: 2024-05-11 00:05 UTC
+03:02:52 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\132\VTEC_20240511T0005Z_americas.png
+03:02:52 | INFO | Current processing time: 2024-05-11 00:10 UTC
+03:02:54 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\132\VTEC_20240511T0010Z_americas.png
+03:02:54 | INFO | Current processing time: 2024-05-11 00:15 UTC
+03:02:57 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\132\VTEC_20240511T0015Z_americas.png
+03:02:57 | INFO | Current processing time: 2024-05-11 00:20 UTC
+03:02:59 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\132\VTEC_20240511T0020Z_americas.png
+03:02:59 | INFO | Current processing time: 2024-05-11 00:25 UTC
+03:03:02 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\132\VTEC_20240511T0025Z_americas.png
+03:03:02 | INFO | Current processing time: 2024-05-11 00:30 UTC
+03:03:04 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\132\VTEC_20240511T0030Z_americas.png
+03:03:04 | INFO | Current processing time: 2024-05-11 00:35 UTC
+03:03:07 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\132\VTEC_20240511T0035Z_americas.png
+03:03:07 | INFO | Current processing time: 2024-05-11 00:40 UTC
+03:03:10 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\132\VTEC_20240511T0040Z_americas.png
+03:03:10 | INFO | Current processing time: 2024-05-11 00:45 UTC
+03:03:12 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\132\VTEC_20240511T0045Z_americas.png
+03:03:12 | INFO | Current processing time: 2024-05-11 00:50 UTC
+03:03:15 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\132\VTEC_20240511T0050Z_americas.png
+03:03:15 | INFO | Current processing time: 2024-05-11 00:55 UTC
+03:03:17 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\132\VTEC_20240511T0055Z_americas.png
+03:03:17 | INFO | Current file: D:\Desktop\lzt_thesis_code\GNSSdraw\Data_download\VTEC_data\2024\132\2024051101_atec.nc
+03:03:17 | INFO | Current processing time: 2024-05-11 01:00 UTC
+03:03:20 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\132\VTEC_20240511T0100Z_americas.png
+03:03:20 | INFO | Current processing time: 2024-05-11 01:05 UTC
+03:03:22 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\132\VTEC_20240511T0105Z_americas.png
+03:03:22 | INFO | Current processing time: 2024-05-11 01:10 UTC
+03:03:25 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\132\VTEC_20240511T0110Z_americas.png
+03:03:25 | INFO | Current processing time: 2024-05-11 01:15 UTC
+03:03:28 | INFO | Output path: D:\Desktop\lzt_thesis_code\GNSSdraw\GNSS_draw\outputs\VTEC\2024\132\VTEC_20240511T0115Z_americas.png
+03:03:28 | INFO | Current processing time: 2024-05-11 01:20 UTC
