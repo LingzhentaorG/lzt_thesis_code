@@ -1,0 +1,25 @@
+[INFO] Starting GNSS selected redraw with 22 tasks, 10 workers, categories=VTEC,ROTI.
+[DONE] VTEC 2024-131: rendered=0 skipped_empty=0 skipped_existing=288
+[DONE] VTEC 2024-130: rendered=0 skipped_empty=0 skipped_existing=288
+[DONE] ROTI 2024-130: rendered=0 skipped_empty=0 skipped_existing=288
+[DONE] ROTI 2024-131: rendered=0 skipped_empty=0 skipped_existing=288
+[DONE] ROTI 2024-132: rendered=0 skipped_empty=0 skipped_existing=288
+[DONE] ROTI 2024-133: rendered=0 skipped_empty=0 skipped_existing=288
+[DONE] ROTI 2024-283: rendered=0 skipped_empty=0 skipped_existing=288
+[DONE] ROTI 2024-284: rendered=0 skipped_empty=0 skipped_existing=288
+[DONE] ROTI 2024-285: rendered=0 skipped_empty=0 skipped_existing=288
+[DONE] ROTI 2024-286: rendered=0 skipped_empty=0 skipped_existing=288
+[DONE] ROTI 2024-366: rendered=0 skipped_empty=0 skipped_existing=288
+[DONE] ROTI 2025-001: rendered=0 skipped_empty=0 skipped_existing=288
+[DONE] ROTI 2025-002: rendered=0 skipped_empty=0 skipped_existing=288
+[DONE] VTEC 2024-132: rendered=176 skipped_empty=0 skipped_existing=112
+[DONE] VTEC 2024-366: rendered=288 skipped_empty=0 skipped_existing=0
+[DONE] VTEC 2024-284: rendered=288 skipped_empty=0 skipped_existing=0
+[DONE] VTEC 2024-283: rendered=288 skipped_empty=0 skipped_existing=0
+[DONE] VTEC 2024-133: rendered=288 skipped_empty=0 skipped_existing=0
+[DONE] VTEC 2024-286: rendered=288 skipped_empty=0 skipped_existing=0
+[DONE] VTEC 2025-001: rendered=288 skipped_empty=0 skipped_existing=0
+[DONE] VTEC 2024-285: rendered=288 skipped_empty=0 skipped_existing=0
+[DONE] VTEC 2025-002: rendered=288 skipped_empty=0 skipped_existing=0
+[SUMMARY] VTEC: rendered=2480 skipped_empty=0 skipped_existing=688
+[SUMMARY] ROTI: rendered=0 skipped_empty=0 skipped_existing=3168
